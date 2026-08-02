@@ -1,0 +1,15 @@
+\section{Governing Equations}
+The desingularized fast-slow system in fast time \(\tau\) is
+\begin{align}
+\frac{d\tilde{e}}{d\tau} &= \frac{1}{2} c_m \ell S^2 \tilde{e} - \frac{g}{2\theta_0} q_\theta - \frac{1}{2\ell} \tilde{e}^3, \\
+\frac{dq_\theta}{d\tau} &= -c_w \theta_z(T_s,\tilde{e})\tilde{e}^3 - \frac{g}{\theta_0}c_\theta\ell q_\theta^2 - \frac{C_\theta}{\ell}\tilde{e}^2 q_\theta, \\
+\frac{dS}{d\tau} &= \frac{\epsilon_1}{\max(\tilde{e},\sqrt{\delta})}\,\mathcal{F}_S, \\
+\frac{dT_s}{d\tau} &= \frac{\epsilon_1}{\max(\tilde{e},\sqrt{\delta})}\frac{1}{C_s}\left(R_{\text{net}} + \rho c_p q_\theta + \frac{k_g}{d_g}(T_g-T_s)\right), \\
+\frac{dT_g}{d\tau} &= \frac{\epsilon_1\epsilon_2}{\max(\tilde{e},\sqrt{\delta})}\frac{\kappa_g}{d_g^2}(T_s-T_g).
+\end{align}
+
+The interior mixing length is
+\begin{equation}
+\ell(z_{\text{eff}})=\frac{\kappa z_{\text{eff}}}{1+\kappa z_{\text{eff}}/\ell_\infty},
+\quad z_{\text{eff}} = z-d+z_{0m}.
+\end{equation}

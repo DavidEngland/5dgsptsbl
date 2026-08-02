@@ -1,0 +1,22 @@
+\section{Closures and Smooth Regularization}
+To maintain \(C^r\)-smoothness near neutral stratification and support robust
+implicit integration with autodiff Jacobians, the stratification closure uses a
+hyperbolic embedding of \(\max(0,x)\):
+\begin{equation}
+\operatorname{smooth\_max}(x;\epsilon) = \frac{x + \sqrt{x^2 + \epsilon^2}}{2}.
+\end{equation}
+
+With
+\(x = (\theta_0-T_s)/h_{\text{sbl}}(\tilde{e})\),
+the closure becomes
+\begin{equation}
+\theta_z(T_s,\tilde{e}) = \operatorname{smooth\_max}\!\left(\frac{\theta_0-T_s}{h_{\text{sbl}}(\tilde{e})};\epsilon_{\text{strat}}\right),
+\end{equation}
+where \(\epsilon_{\text{strat}}\) is a small smoothing scale exposed in
+\texttt{SBLParams}.
+
+The bulk transfer coefficients are
+\begin{align}
+C_D &= \left[\frac{\kappa}{\ln((z_1-d)/z_{0m})}\right]^2, \\
+C_H &= \frac{\kappa^2}{\ln((z_1-d)/z_{0m})\,\ln((z_1-d)/z_{0h})}.
+\end{align}

@@ -151,22 +151,6 @@ JULIA_PKG_PRECOMPILE_AUTO=0 julia --project=. --compiled-modules=no test/runtest
 
 ---
 
-## Citation & References
-
-If you use `5DGSPTSBL.jl` in your research, please cite:
-
-```bibtex
-@article{GSPTSBL2026,
-  title={Geometric Singular Perturbation Theory for Desingularized Stable Boundary Layer Collapse},
-  author={England, David and Collaborators},
-  journal={Quarterly Journal of the Royal Meteorological Society},
-  year={2026}
-}
-
-```
-
----
-
 ## License
 
 This project is licensed under the MIT License. See `LICENSE` for details.

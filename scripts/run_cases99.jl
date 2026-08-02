@@ -23,27 +23,28 @@ function plot_cases99(solution, params::SBLParams)
 	S = solution[3, :]
 	Ts = solution[4, :]
 	Tg = solution[5, :]
+	slow_state = SVector(sum(S) / length(S), sum(Ts) / length(Ts))
 
 	fold_grid_e = range(minimum(e_tilde), stop = maximum(e_tilde), length = 60)
 	fold_grid_q = range(minimum(q_theta), stop = maximum(q_theta), length = 60)
-	determinant_grid = [jacobian_determinant(SVector(e, q), SVector(S[i], Ts[i]), params) for e in fold_grid_e, q in fold_grid_q]
+	determinant_grid = [jacobian_determinant(SVector(e, q), slow_state, params) for e in fold_grid_e, q in fold_grid_q]
 
 	figure = Figure(size = (1400, 1100))
-	axis_a = Axis(figure[1, 1], xlabel = "t (h)", ylabel = "state")
+	axis_a = CairoMakie.Axis(figure[1, 1], xlabel = "t (h)", ylabel = "state")
 	lines!(axis_a, times, e_tilde, color = :steelblue, label = "ẽ")
 	lines!(axis_a, times, q_theta, color = :darkorange, label = "qθ")
 	axislegend(axis_a, position = :rb)
 
-	axis_b = Axis(figure[1, 2], xlabel = "t (h)", ylabel = "temperature")
+	axis_b = CairoMakie.Axis(figure[1, 2], xlabel = "t (h)", ylabel = "temperature")
 	lines!(axis_b, times, Ts, color = :firebrick, label = "Ts")
 	lines!(axis_b, times, Tg, color = :seagreen, label = "Tg")
 	axislegend(axis_b, position = :rb)
 
-	axis_c = Axis(figure[2, 1], xlabel = "ẽ", ylabel = "qθ")
+	axis_c = CairoMakie.Axis(figure[2, 1], xlabel = "ẽ", ylabel = "qθ")
 	contour!(axis_c, fold_grid_e, fold_grid_q, determinant_grid'; levels = [0.0], color = :black)
 	lines!(axis_c, e_tilde, q_theta, color = :midnightblue, linewidth = 2)
 
-	axis_d = Axis(figure[2, 2], xlabel = "t (h)", ylabel = "det(J_fast)")
+	axis_d = CairoMakie.Axis(figure[2, 2], xlabel = "t (h)", ylabel = "det(J_fast)")
 	determinant_series = [jacobian_determinant(SVector(e_tilde[i], q_theta[i]), SVector(S[i], Ts[i]), params) for i in eachindex(times)]
 	lines!(axis_d, times, determinant_series, color = :black)
 	hlines!(axis_d, [0.0], color = :red, linestyle = :dash)

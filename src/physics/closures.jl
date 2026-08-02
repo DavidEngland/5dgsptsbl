@@ -1,3 +1,13 @@
+# src/physics/closures.jl
+"""
+    smooth_max(x, eps)
+
+C^∞ algebraic hyperbolic embedding approximation of `max(0, x)`.
+"""
+@inline function smooth_max(x, eps)
+    return 0.5 * (x + sqrt(x^2 + eps^2))
+end
+
 @inline function z_eff(z, params::SBLParams)
     return z - params.d + params.z0m
 end
@@ -12,7 +22,8 @@ end
 end
 
 @inline function stratification(Ts, e_tilde, params::SBLParams)
-    return max(zero(Ts + e_tilde + params.theta0), (params.theta0 - Ts) / h_sbl(e_tilde, params))
+    raw_grad = (params.theta0 - Ts) / h_sbl(e_tilde, params)
+    return smooth_max(raw_grad, params.eps_strat)
 end
 
 @inline function theta_z(Ts, e_tilde, params::SBLParams)
