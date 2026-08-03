@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex reports/generated/paper"] 1785784350.65107 "reports/generated/paper.aux" "reports/generated/paper.bbl" "reports/generated/paper" 1785784354.01132 0
+["bibtex reports/generated/paper"] 1785786366.12689 "reports/generated/paper.aux" "reports/generated/paper.bbl" "reports/generated/paper" 1785786369.45503 0
   "/usr/local/texlive/2026/texmf-dist/bibtex/bst/natbib/unsrtnat.bst" 1233624470 24550 a41a6405f4de768c43e871d9fbce2bc8 ""
-  "reports/generated/paper.aux" 1785784353.77726 8908 f2dc04aa5e395440902947933fdbdae7 "pdflatex"
-  "reports/generated/paper1.bib" 1785784343.65456 16321 34663e0a492e32caffa6e8788b31e623 ""
+  "reports/generated/paper.aux" 1785786369.21314 9645 958ccc91960a10e35b6256064e048b26 "pdflatex"
+  "reports/generated/paper1.bib" 1785786362.69393 16321 34663e0a492e32caffa6e8788b31e623 ""
   (generated)
   "reports/generated/paper.bbl"
   "reports/generated/paper.blg"
   (rewritten before read)
-["pdflatex"] 1785784350.73982 "reports/generated/paper.tex" "reports/generated/paper.pdf" "paper" 1785784354.01143 0
+["pdflatex"] 1785786366.24725 "reports/generated/paper.tex" "reports/generated/paper.pdf" "paper" 1785786369.45518 0
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -58,6 +58,7 @@
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/rm-lmr7.tfm" 1254269338 11852 5a9022f105fd1ee2797df861e79ae9a0 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/rm-lmr8.tfm" 1254269338 11864 309fd7f43e4a0ba39f6f7644d76e8edf ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/ts1-lmr10.tfm" 1254269338 1556 b86d923e6b2f9aab2e313098a95cb0b8 ""
+  "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1248133631 31764 459c573c03a4949a528c2cc7f557e217 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb" 1255129361 121021 1bf809ce4a594679006bd72263eba59b ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb" 1255129361 116908 1fca96723793882c2e0160350c192fc8 ""
@@ -76,6 +77,7 @@
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr8.pfb" 1255129361 122174 a7a08406857c9530a0320a2517f60370 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri10.pfb" 1255129361 112593 fda2373ba4420af33949610de4c28fe8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy10.pfb" 1254269338 27863 09ce3735688ffde955e72da27c95b61a ""
+  "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy6.pfb" 1254269338 28109 6d61305ed3d0eb794ebe36f15cf44aa0 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy7.pfb" 1254269338 27941 d1f5d03f61a46c3fcc3a2ba904ddda52 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy8.pfb" 1254269338 27802 5c876bb2c4040caaf035d60bd74a86bd ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt10.pfb" 1255129361 113227 1010e11451afc2822c95dae77c390042 ""
@@ -145,12 +147,12 @@
   "/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1780746672 5573038 b99aad5e4898a9034e953632f940512b ""
   "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1774209607 3636776 dc5fa9b6b1453b9d196cd42edf876004 ""
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
-  "reports/generated/figures/cases99_manifold.png" 1785784343.28353 1412529 fff29171d695a9e53f540c598bda0c26 ""
-  "reports/generated/figures/manifold.png" 1785784343.28384 85706 414dfc0509ee7656b2e69a162b69b3fd ""
-  "reports/generated/paper.aux" 1785784353.77726 8908 f2dc04aa5e395440902947933fdbdae7 "pdflatex"
-  "reports/generated/paper.bbl" 1785784350.73551 14405 d1874092de0af7ab1156a066504eb52e "bibtex reports/generated/paper"
-  "reports/generated/paper.out" 1785784353.778 2170 04d5d30e025c20a829d30e422d65b163 "pdflatex"
-  "reports/generated/paper.tex" 1785784343.65404 17390 0bd36ac61641a79c18186e11ba938c8d ""
+  "reports/generated/figures/cases99_manifold.png" 1785785590.49766 1412435 64215814f1701e3365bb9f6738f68054 ""
+  "reports/generated/figures/manifold.png" 1785785590.49787 85706 414dfc0509ee7656b2e69a162b69b3fd ""
+  "reports/generated/paper.aux" 1785786369.21314 9645 958ccc91960a10e35b6256064e048b26 "pdflatex"
+  "reports/generated/paper.bbl" 1785786366.24093 14405 d1874092de0af7ab1156a066504eb52e "bibtex reports/generated/paper"
+  "reports/generated/paper.out" 1785786369.21392 2302 ca1c27ff6683276b3cb8788511a57c7b "pdflatex"
+  "reports/generated/paper.tex" 1785786362.69305 19419 13b305284b6253fbcf23bf1ae4fc57a7 ""
   (generated)
   "reports/generated/paper.aux"
   "reports/generated/paper.log"

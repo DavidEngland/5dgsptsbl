@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  3 AUG 2026 14:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  3 AUG 2026 14:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -515,7 +515,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 23.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 31.
+(Font)              <10.95> on input line 32.
  [1
 
 {/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
@@ -523,43 +523,51 @@ al/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/202
 6/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2026/texmf-dist/f
 onts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/d
 vips/lm/lm-mathsy.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm
--mathex.enc}] [2] [3]
+-mathex.enc}]
+Overfull \hbox (16.3635pt too wide) in paragraph at lines 103--104
+ []\T1/lmr/bx/n/10.95 Proposition 1 (Reg-u-lar-ized Fast Sys-tem and Or-bit Equ
+iv-a-lence).[] \T1/lmr/m/n/10.95 Let $\OMS/lmsy/m/n/10.95 D \OT1/lmr/m/n/10.95 
+= \OMS/lmsy/m/n/10.95 f\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 e; q[]; S; T[]; 
+T[]\OT1/lmr/m/n/10.95 ) \OMS/lmsy/m/n/10.95 2
+ []
+
+[2] [3]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-47.
+98.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Overfull \hbox (1.06113pt too wide) in paragraph at lines 149--150
+Overfull \hbox (1.06113pt too wide) in paragraph at lines 200--201
 []\T1/lmr/m/n/10.95 Hyperbolic strat-i-fi-ca-tion reg-u-lar-iza-tion $[]\OT1/lm
 r/m/n/10.95 (\OML/lmm/m/it/10.95 x\OT1/lmr/m/n/10.95 ; \OML/lmm/m/it/10.95 ^^O[
 ]\OT1/lmr/m/n/10.95 )$ \T1/lmr/m/n/10.95 sup-port-ing Fenichel-compatible
  []
 
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-54.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
+05.
 (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-<figures/cases99_manifold.png, id=103, 1806.75pt x 1355.0625pt>
+) [4{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+<figures/cases99_manifold.png, id=123, 1806.75pt x 1355.0625pt>
 File: figures/cases99_manifold.png Graphic file (type png)
 <use figures/cases99_manifold.png>
-Package pdftex.def Info: figures/cases99_manifold.png  used on input line 174.
+Package pdftex.def Info: figures/cases99_manifold.png  used on input line 225.
 (pdftex.def)             Requested size: 446.26582pt x 334.69151pt.
-<figures/manifold.png, id=108, 677.53125pt x 526.96875pt>
+ [5 <reports/generated/figures/cases99_manifold.png>]
+<figures/manifold.png, id=136, 677.53125pt x 526.96875pt>
 File: figures/manifold.png Graphic file (type png)
 <use figures/manifold.png>
-Package pdftex.def Info: figures/manifold.png  used on input line 191.
+Package pdftex.def Info: figures/manifold.png  used on input line 242.
 (pdftex.def)             Requested size: 375.80544pt x 292.30225pt.
- [4{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [5 <repo
-rts/generated/figures/cases99_manifold.png>] [6 <reports/generated/figures/mani
-fold.png>]
-Overfull \hbox (55.37338pt too wide) in paragraph at lines 205--209
+
+Overfull \hbox (55.37338pt too wide) in paragraph at lines 256--260
 \T1/lmtt/m/n/10.95 scripts/assemble_manuscript.jl\T1/lmr/m/n/10.95 . The pri-ma
 ry bench-mark fig-ure is gen-er-ated by \T1/lmtt/m/n/10.95 scripts/run_cases99.
 jl
  []
 
-[7] (reports/generated/paper.bbl [8
+[6 <reports/generated/figures/manifold.png>] [7] (reports/generated/paper.bbl
+[8
 
 ] [9]) [10] (reports/generated/paper.aux)
  ***********
@@ -567,16 +575,16 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 04D5D30E025C20A829D30E422D65B163;2170.
+(rerunfilecheck)             Checksum: CA1C27FF6683276B3CB8788511A57C7B;2302.
  ) 
 Here is how much of TeX's memory you used:
- 11908 strings out of 467525
- 182740 string characters out of 5418982
- 609776 words of memory out of 5000000
+ 11917 strings out of 467525
+ 182870 string characters out of 5418982
+ 613032 words of memory out of 5000000
  40550 multiletter control sequences out of 15000+600000
  718622 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,79p,1067b,613s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,14n,79p,1067b,613s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/lo
 cal/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texliv
 e/2026/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2026/tex
@@ -592,14 +600,16 @@ public/lm/lmr6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lm
 r7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr
 /local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/tex
 live/2026/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2026/
-texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2026/texmf-dist/
-fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1
-/public/lm/lmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/am
-sfonts/symbols/msbm10.pfb>
-Output written on reports/generated/paper.pdf (10 pages, 1554462 bytes).
+texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2026/texmf-dist/
+fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1
+/public/lm/lmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/
+lmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symb
+ols/msam10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/
+symbols/msbm10.pfb>
+Output written on reports/generated/paper.pdf (10 pages, 1571571 bytes).
 PDF statistics:
- 310 PDF objects out of 1000 (max. 8388607)
- 244 compressed objects within 3 object streams
- 80 named destinations out of 1000 (max. 500000)
- 83 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 333 PDF objects out of 1000 (max. 8388607)
+ 263 compressed objects within 3 object streams
+ 89 named destinations out of 1000 (max. 500000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
 
