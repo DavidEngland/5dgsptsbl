@@ -1,4 +1,5 @@
 #!/usr/bin/env julia
+# scripts/assemble_manuscript.jl
 
 using Dates
 

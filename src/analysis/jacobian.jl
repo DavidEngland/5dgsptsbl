@@ -2,28 +2,59 @@ function fast_jacobian(u_fast, u_slow, p::SBLParams)
     return ForwardDiff.jacobian(v -> fast_2d_rhs(v, u_slow, p), u_fast)
 end
 
+function fast_trace(u_fast, u_slow, p::SBLParams)
+    e_tilde = u_fast[1]
+    q_theta = u_fast[2]
+    S = u_slow[1]
+
+    ell = mixing_length(z_eff(p.z1, p), p)
+    df1_de = 0.5 * p.cm * ell * S^2 - 1.5 * e_tilde^2 / ell
+    df2_dq = -2 * (p.g / p.theta0) * p.ctheta * ell * q_theta - (p.Ctheta / ell) * e_tilde^2
+
+    return df1_de + df2_dq
+end
+
+"""
+    jacobian_determinant(u_fast, u_slow, p::SBLParams)
+
+Compute the exact 2D fast-subsystem Jacobian determinant at
+`u_fast = (e_tilde, q_theta)` and `u_slow = (S, Ts)`.
+"""
 function jacobian_determinant(u_fast, u_slow, p::SBLParams)
-    J = fast_jacobian(u_fast, u_slow, p)
-    return J[1, 1] * J[2, 2] - J[1, 2] * J[2, 1]
+    e_tilde = u_fast[1]
+    q_theta = u_fast[2]
+    S = u_slow[1]
+    Ts = u_slow[2]
+
+    ell = mixing_length(z_eff(p.z1, p), p)
+    theta_term, dtheta_de = stratification_with_derivative(Ts, e_tilde, p)
+
+    df1_de = 0.5 * p.cm * ell * S^2 - 1.5 * e_tilde^2 / ell
+    df1_dq = -0.5 * p.g / p.theta0
+    df2_de = -p.cw * (3 * theta_term * e_tilde^2 + e_tilde^3 * dtheta_de) - 2 * (p.Ctheta / ell) * e_tilde * q_theta
+    df2_dq = -2 * (p.g / p.theta0) * p.ctheta * ell * q_theta - (p.Ctheta / ell) * e_tilde^2
+
+    return df1_de * df2_dq - df1_dq * df2_de
 end
 
-function _fold_determinant(e_tilde, u_slow, p::SBLParams)
-    return jacobian_determinant(SVector(e_tilde, zero(e_tilde)), u_slow, p)
+function _fold_determinant(e_tilde, q_theta, u_slow, p::SBLParams)
+    return jacobian_determinant(SVector(e_tilde, q_theta), u_slow, p)
 end
 
-function find_fold_locus(u_slow, p::SBLParams; e_bounds = (1e-4, 10.0), maxiter = 64)
+function find_fold_locus(u_slow, p::SBLParams; q_theta = 0.0, e_bounds = (1e-4, 10.0), maxiter = 64)
+    q_theta_T = convert(eltype(u_slow), q_theta)
     left, right = e_bounds
-    f_left = _fold_determinant(left, u_slow, p)
-    f_right = _fold_determinant(right, u_slow, p)
+    f_left = _fold_determinant(left, q_theta_T, u_slow, p)
+    f_right = _fold_determinant(right, q_theta_T, u_slow, p)
     if sign(f_left) == sign(f_right)
-        return SVector((left + right) / 2, zero(left + right))
+        return SVector((left + right) / 2, q_theta_T)
     end
 
     for _ in 1:maxiter
         mid = (left + right) / 2
-        f_mid = _fold_determinant(mid, u_slow, p)
+        f_mid = _fold_determinant(mid, q_theta_T, u_slow, p)
         if f_mid == 0
-            return SVector(mid, zero(mid))
+            return SVector(mid, q_theta_T)
         elseif sign(f_mid) == sign(f_left)
             left = mid
             f_left = f_mid
@@ -34,7 +65,7 @@ function find_fold_locus(u_slow, p::SBLParams; e_bounds = (1e-4, 10.0), maxiter 
     end
 
     mid = (left + right) / 2
-    return SVector(mid, zero(mid))
+    return SVector(mid, q_theta_T)
 end
 
 function delta_sensitivity_check(u_slow, params::SBLParams, delta_range)
@@ -66,6 +97,7 @@ function delta_sensitivity_check(u_slow, params::SBLParams, delta_range)
             L_e = params.L_e,
             eps1 = params.eps1,
             eps2 = params.eps2,
+            eps_strat = params.eps_strat,
         )
         fold = find_fold_locus(u_slow, perturbed)
         shift = norm(fold - reference_fold) / reference_norm

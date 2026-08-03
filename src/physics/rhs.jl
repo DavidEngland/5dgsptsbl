@@ -4,10 +4,15 @@ end
 
 @inline _desingularization_scale(e_tilde, params::SBLParams) = max(e_tilde, sqrt(params.delta))
 
-@inline surface_momentum_forcing(params::SBLParams) = zero(params.g)
+@inline function shear_forcing(S::T, params::SBLParams) where {T<:Real}
+    return (params.S_geo - S) / params.tau_S
+end
 
-@inline function surface_heat_forcing(Ts, params::SBLParams)
-    return zero(Ts + params.theta0)
+@inline function net_radiation(Ts::T, params::SBLParams) where {T<:Real}
+    sigma = convert(promote_type(T, typeof(params.theta0)), 5.670374419e-8)
+    R0 = params.R_down - params.emissivity * sigma * params.theta0^4
+    dR_dT = -4 * params.emissivity * sigma * params.theta0^3
+    return R0 + dR_dT * (Ts - params.theta0)
 end
 
 @inline function gspt_5d_rhs!(du, u, p::SBLParams, tau)
@@ -20,8 +25,8 @@ end
     ell = mixing_length(z_eff(p.z1, p), p)
     theta_term = theta_z(Ts, e_tilde, p)
     inv_e = one(e_tilde) / _desingularization_scale(e_tilde, p)
-    momentum_forcing = surface_momentum_forcing(p)
-    heat_forcing = surface_heat_forcing(Ts, p)
+    momentum_forcing = shear_forcing(S, p)
+    heat_forcing = net_radiation(Ts, p)
 
     du[1] = 0.5 * p.cm * ell * S^2 * e_tilde - (p.g / (2 * p.theta0)) * q_theta - (0.5 / ell) * e_tilde^3
     du[2] = -p.cw * theta_term * e_tilde^3 - (p.g / p.theta0) * p.ctheta * ell * q_theta^2 - (p.Ctheta / ell) * e_tilde^2 * q_theta

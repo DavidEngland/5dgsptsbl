@@ -5,6 +5,7 @@
 \usepackage{amsmath,amssymb,mathtools}
 \usepackage{booktabs}
 \usepackage{graphicx}
+\graphicspath{{../../paper/figures/}}
 \usepackage{geometry}
 \usepackage{hyperref}
 \geometry{margin=1in}
@@ -19,8 +20,7 @@
 % --- Begin Section: templates/sections/abstract.tex.mustache ---
 \begin{abstract}
 We present a five-dimensional geometric singular perturbation model for the stable
-boundary layer with state variables
-\((\tilde{e}, q_\theta, S, T_s, T_g)\).
+boundary layer with state variables \((\tilde{e}, q_\theta, S, T_s, T_g)\).
 The model combines desingularized turbulence dynamics, slaved thermodynamic
 closures, and slow thermal coupling to support fold-locus diagnostics and
 data-driven parameter identification.
@@ -50,6 +50,49 @@ The bulk transfer coefficients are
 C_D &= \left[\frac{\kappa}{\ln((z_1-d)/z_{0m})}\right]^2, \\
 C_H &= \frac{\kappa^2}{\ln((z_1-d)/z_{0m})\,\ln((z_1-d)/z_{0h})}.
 \end{align}
+
+\subsection{Transcritical Ignition and Surface-Flux Parameterization}
+Breakout from the laminar floor $\tilde{e} \approx \sqrt{\delta}$ into the active turbulent manifold occurs when the shear $S$ exceeds a local ignition threshold $S_{\text{trans}}$. Linearizing the desingularized fast equation $\frac{d\tilde{e}}{d\tau} = f_1(\tilde{e}, q_\theta)$ about the laminar state $(\tilde{e}_0, q_{\theta,0}) = (\sqrt{\delta}, 0)$ gives
+\begin{equation}
+\left.\frac{\partial f_1}{\partial \tilde{e}}\right\rvert_{(\sqrt{\delta}, 0)} = \frac{1}{2} c_m \ell S^2 - \frac{3}{2\ell}\delta.
+\end{equation}
+Setting this growth rate to zero yields the explicit transcritical threshold
+\begin{equation}
+S_{\text{trans}} = \frac{1}{\ell}\sqrt{\frac{3\delta}{c_m}}.
+\end{equation}
+For $S < S_{\text{trans}}$, the laminar floor remains locally exponentially stable, while for $S > S_{\text{trans}}$ the principal fast eigenvalue becomes positive and trajectories are ejected toward the upper turbulent branch of the fast manifold.
+
+To compare buffered and unbuffered surface-cooling regimes without introducing dimensional control parameters, we write the surface energy balance in terms of the nondimensional ground-flux ratio
+\begin{equation}
+\Pi_G = \frac{G}{R_{\text{net}}} = \frac{\frac{k_g}{d_g}(T_s - T_g)}{R_{\text{net}}(T_s)}.
+\end{equation}
+Using $\Pi_G$ makes regime boundaries invariant to soil conductivity and depth through $(k_g, d_g)$ and to differing atmospheric radiative forcing profiles through $R_{\text{net}}$, while preserving the buffered versus runaway cooling interpretation.
+
+\subsection{Projection and Unfolding Proof Sketches}
+Let $\pi_{Ri}(\tilde{e}, q_\theta, S, T_s, T_g) = \frac{g\,\theta_z(T_s,\tilde{e})}{\theta_0 S^2}$ denote the scalar Richardson-number projection. Its differential is the nonzero row functional
+\begin{equation}
+D\pi_{Ri} = \begin{pmatrix}
+\frac{g}{\theta_0 S^2}\frac{\partial \theta_z}{\partial \tilde{e}} & 0 & -\frac{2g\theta_z}{\theta_0 S^3} & \frac{g}{\theta_0 S^2}\frac{\partial \theta_z}{\partial T_s} & 0
+\end{pmatrix},
+\end{equation}
+so $\operatorname{rank}(D\pi_{Ri}) = 1$ whenever $S > 0$ and $\theta_z > 0$. Since the fold set $\mathcal{C}_{\mathrm{fold}} \subset \mathbb{R}^5$ is three-dimensional, the dimension count
+\begin{equation}
+\dim\bigl(T_p\mathcal{C}_{\mathrm{fold}} \cap \ker D\pi_{Ri}(p)\bigr) \ge 3 + 4 - 5 = 2
+\end{equation}
+shows that the kernel of the restricted map $D\pi_{Ri}|_{T_p\mathcal{C}_{\mathrm{fold}}}$ is necessarily nontrivial. Hence Richardson-number level sets intersect the folded fast manifold along two-dimensional fibers rather than at isolated points, which is the geometric source of non-universal projected critical $Ri$ thresholds.
+
+For the cusp unfolding, let $(\eta_1, \eta_2)$ be the center-manifold control coordinates induced by geostrophic shear and deep-soil temperature. The physical unfolding matrix is
+\begin{equation}
+M = \begin{pmatrix}
+\partial_{S_g} \eta_1 & \partial_{T_{\mathrm{deep}}} \eta_1 \\
+\partial_{S_g} \eta_2 & \partial_{T_{\mathrm{deep}}} \eta_2
+\end{pmatrix},
+\end{equation}
+with leading entries $\partial_{S_g}\eta_1 = \epsilon_1/(\tilde{e}\tau_S)$ and $\partial_{T_{\mathrm{deep}}}\eta_2 = \epsilon_1\epsilon_2 k_g/(\tilde{e} C_s d_g)$. Therefore
+\begin{equation}
+\det(M) = \frac{\epsilon_1^2\epsilon_2 k_g}{\tilde{e}^2 C_s d_g \tau_S}\left(1 - \frac{\partial R_{\mathrm{net}}}{\partial T_s}\frac{d_g}{k_g}\right),
+\end{equation}
+which remains positive for the nocturnal linearized radiation law used here because $\partial R_{\mathrm{net}}/\partial T_s < 0$. The unfolding is thus transverse and structurally stable in the $(S_g,T_{\mathrm{deep}})$ control plane.
 % --- End Section: templates/sections/closures.tex.mustache ---
 
 % --- Begin Section: templates/sections/governing_equations.tex.mustache ---
@@ -62,6 +105,17 @@ The desingularized fast-slow system in fast time \(\tau\) is
 \frac{dT_s}{d\tau} &= \frac{\epsilon_1}{\max(\tilde{e},\sqrt{\delta})}\frac{1}{C_s}\left(R_{\text{net}} + \rho c_p q_\theta + \frac{k_g}{d_g}(T_g-T_s)\right), \\
 \frac{dT_g}{d\tau} &= \frac{\epsilon_1\epsilon_2}{\max(\tilde{e},\sqrt{\delta})}\frac{\kappa_g}{d_g^2}(T_s-T_g).
 \end{align}
+
+\begin{quote}
+\small
+{\textbf{Remark on Asymptotic Normal Form:}} The dissipation term $-\frac{1}{2\ell}\tilde{e}^3$ represents the leading-order $C^r$-smooth normal form of Kolmogorov dissipation $\frac{e^{3/2}}{\ell}$ in fast time $\tau$. Omitted $\mathcal{O}(\delta)$ terms contribute a bounded linear damping correction $-\frac{3\delta}{4\ell}\tilde{e}$ near the laminar floor $\tilde{e} \sim \sqrt{\delta}$, which is uniformly subdominant across the active turbulent manifold for $\delta \le 10^{-4}$.
+\end{quote}
+
+Writing the omitted remainder as $\mathcal{R}_\delta(\tilde{e}) = \frac{3\delta}{4\ell}\tilde{e} + \mathcal{O}(\delta^2)$, the desingularized dissipation error obeys
+\begin{equation}
+\max_{\tilde{e} \in [\sqrt{\delta},\tilde{e}_{\max}]} \lvert \mathcal{R}_\delta(\tilde{e}) \rvert \le \frac{3\delta^{3/2}}{4\ell}.
+\end{equation}
+For the representative manuscript regime $\delta = 10^{-5}$ and $\ell = 10\,\mathrm{m}$, this gives $\max \lvert \mathcal{R}_\delta \rvert \lesssim 2.4 \times 10^{-9}\,\mathrm{m\,s^{-2}}$, which is below $10^{-5}\%$ of the active cubic dissipation magnitude at $\tilde{e} = 0.2$. The cubic fast-time normal form therefore preserves the physical dissipation scale to manuscript accuracy.
 
 The interior mixing length is
 \begin{equation}
@@ -86,6 +140,24 @@ Primary note sources:
 \item \texttt{notes/Types.md}
 \end{itemize}
 % --- End Section: templates/sections/notes_traceability.tex.mustache ---
+
+% --- Begin Section: templates/sections/results_figures.tex.mustache ---
+\section{Numerical Results and Phase Manifold}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.95\textwidth]{figures/cases99_manifold.png}
+    \caption{CASES-99 benchmark simulation showing (a) fast state dynamics, (b) surface and ground temperatures, (c) phase space trajectory with fold locus contour, and (d) fast subsystem Jacobian determinant stability.}
+    \label{fig:cases99_manifold}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/manifold.png}
+    \caption{Phase space trajectory in $(\tilde{e}, q_\theta)$ space demonstrating convergence to the slow manifold.}
+    \label{fig:manifold}
+\end{figure}
+% --- End Section: templates/sections/results_figures.tex.mustache ---
 
 \section{Reproducibility}
 The manuscript was assembled from repository templates and notes using
