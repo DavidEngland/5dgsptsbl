@@ -36,9 +36,9 @@ function main()
     mkpath(outdir)
 
     note_paths = [
-        joinpath("notes", "Governing Equations and Turbulence Closure.md"),
-        joinpath("notes", "Closures.md"),
-        joinpath("notes", "Types.md"),
+        joinpath("notes", "theory", "governing-equations-and-turbulence-closure.md"),
+        joinpath("notes", "implementation", "implementation-notes.md"),
+        joinpath("notes", "reviews", "manuscript-review-notes.md"),
     ]
     if !notes_exist(note_paths)
         missing = filter(path -> !isfile(path), note_paths)

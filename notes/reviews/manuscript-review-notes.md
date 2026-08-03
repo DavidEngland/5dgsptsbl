@@ -35,9 +35,9 @@ This section should leave no ambiguity about
 Ideally, by the end of §2.1 the reader should know exactly what object  
 \mathbf x\in\Omega_0  
 means.  
-   
+
 ⸻  
-   
+
 **2.2 Justify the desingularization**  
 This is where the manuscript can distinguish itself mathematically.  
 Rather than simply introducing  
@@ -50,15 +50,15 @@ For example:
 * preserves equilibrium sets,  
 * enables application of Fenichel theory.  
 Those are mathematical properties, not numerical conveniences.  
-   
+
 ⸻  
-   
+
 **2.3 Present the vector field as a theorem-ready object**  
 Instead of introducing equations component-by-component, define  
 \mathbf F:\Omega_0\rightarrow\mathbb R^5  
 first,  
 then decompose  
-\mathbf F = (F_{\rm fast},F_{\rm slow},F_{\rm superslow}).  
+\mathbf F=(F_{\rm fast},F_{\rm slow},F_{\rm superslow}).
 That notation simplifies every later theorem.  
 For example,  
 Theorem 1 immediately becomes  
@@ -68,22 +68,22 @@ Theorem 2 becomes
 Section 4 becomes  
 \pi_{Ri}\circ F.  
 Everything becomes cleaner.  
-   
+
 ⸻  
-   
+
 **2.4 Observable operators**  
 I think adding this subsection is one of the strongest improvements.  
 Most GSPT papers never explicitly define the observation map.  
 Here you are introducing  
-\Pi_{\rm obs} : \Omega_0 \rightarrow \mathcal O,  
+\Pi_{\rm obs}:\Omega_0\rightarrow\mathcal O,
 where  
-\mathcal O = (Ri,H,U,\ldots).  
+\mathcal O=(Ri,H,U,\ldots).
 That makes Section 4 almost inevitable.  
 It also opens the door for Paper 2, where WSINDy operates on observational data rather than directly on the full state.  
 That is a very natural mathematical bridge.  
-   
+
 ⸻  
-   
+
 ## One structural suggestion  
 I would slightly broaden the terminology.  
 Instead of  
@@ -95,24 +95,24 @@ Some may be integral functionals.
 Some may involve averaging.  
 Some may involve derivatives.  
 That title scales better for later papers.  
-   
+
 ⸻  
-   
+
 ## A theorem I would consider adding to Section 2  
 The regularization is sufficiently central that it deserves its own formal statement.  
 For example:  
 **Proposition (Regularized Fast System).**  
 Under the coordinate transformation  
-> \tilde e=\sqrt{e+\delta}, >  
+> \tilde e=\sqrt{e+\delta},>
 together with the time rescaling  
-> d\tau > = > \frac{\tilde e}{\epsilon_1}\,dt, >  
+> d\tau> => \frac{\tilde e}{\epsilon_1}\,dt,>
 the fast subsystem extends to a smooth vector field on the chart domain  
-> \Omega_0, >  
+> \Omega_0,>
 preserving equilibrium points and normal hyperbolicity away from the fold set.  
 That proposition then justifies every subsequent application of GSPT.  
-   
+
 ⸻  
-   
+
 ## What I would postpone  
 I agree with postponing most of the canard and MMO machinery to Part 2.  
 For Paper 1, Section 5 should remain geometric rather than exhaustive.  
@@ -122,9 +122,9 @@ The four-phase relaxation cycle is sufficient because it explains:
 3. jump,  
 4. recovery.  
 That is exactly the singular-cycle picture readers need before the data-driven analysis.  
-   
+
 ⸻  
-   
+
 ## Overall manuscript trajectory  
 With the current outline, the paper has a clear mathematical architecture:  
 * **Section 2:** Define the regularized fast–slow dynamical system and observation operators.  
@@ -145,12 +145,12 @@ Before introducing the fast, slow, and super-slow subsystems separately, define 
 For example,  
 \dot{\mathbf{x}} = \mathbf{F}(\mathbf{x};\mu,\epsilon_1,\epsilon_2),  
 with  
-\mathbf{F} = \begin{pmatrix} F_{\mathrm{fast}}\\ F_{\mathrm{slow}}\\ F_{\mathrm{superslow}} \end{pmatrix}.  
+\mathbf{F}=\begin{pmatrix}F_{\mathrm{fast}}\\F_{\mathrm{slow}}\\F_{\mathrm{superslow}}\end{pmatrix}.
 Then define the individual components.  
 That notation will make Theorems 1 and 2 much more concise.  
-   
+
 ⸻  
-   
+
 ## 2. Make the assumptions explicit  
 Several later results rely on assumptions that are currently implicit.  
 For example:  
@@ -160,9 +160,9 @@ For example:
 * Positive invariance of the physically admissible region.  
 * Existence and uniqueness of local solutions.  
 A short “Standing Assumptions” subsection would be valuable.  
-   
+
 ⸻  
-   
+
 ## 3. Refine Proposition 2.1  
 This proposition is important enough to deserve a more careful statement.  
 Right now it claims  
@@ -171,9 +171,9 @@ That is true under appropriate conditions, but I’d be careful with the wording
 A more precise formulation is:  
 The chart transformation is a smooth diffeomorphism on e>0, and the positive time reparameterization preserves trajectories, equilibrium sets, and the signs of eigenvalues transverse to the critical manifold.  
 That is the standard GSPT statement.  
-   
+
 ⸻  
-   
+
 ## 4. Clarify the role of \delta  
 One issue reviewers may raise is whether \delta is  
 * purely numerical,  
@@ -183,21 +183,21 @@ I would state this explicitly.
 For example:  
 Throughout this paper, \delta>0 is regarded as a regularization parameter used to construct a smooth chart. Geometric results are stated for the regularized system and interpreted in the limit \delta\to0^+.  
 That removes ambiguity.  
-   
+
 ⸻  
-   
+
 ## 5. Observation operators  
 I like introducing  
-\Pi_{\rm obs} : \Omega_0\rightarrow\mathcal O.  
+\Pi_{\rm obs}:\Omega_0\rightarrow\mathcal O.
 That is a significant conceptual improvement.  
 One suggestion is to avoid calling every component an “operator.” Some are scalar-valued functions rather than operators in the functional-analytic sense.  
 You could distinguish:  
 * **Observation map** \Pi_{\rm obs},  
 * **Diagnostic functionals** \pi_{Ri}, \pi_H, \pi_U.  
 That terminology is common in inverse problems and data assimilation.  
-   
+
 ⸻  
-   
+
 ## 6. Differential notation  
 The covector notation is appropriate.  
 Rather than writing  
@@ -205,26 +205,26 @@ gradient D\pi_{Ri},
 I’d consistently refer to it as the **differential**  
 D\pi_{Ri}(\mathbf x)\in T_{\mathbf x}^*\Omega_0,  
 and reserve “gradient” for the Euclidean metric if you later use it.  
-   
+
 ⸻  
-   
+
 ## 7. Dependency alignment  
 The final “Dependency Alignment” subsection is useful for planning, but I would not include it in the published paper.  
 Instead, let the manuscript structure convey those dependencies naturally. A dependency diagram is helpful during development, but most journals would view it as meta-commentary rather than part of the scientific exposition.  
-   
+
 ⸻  
-   
+
 ## 8. One additional proposition  
 I think Section 2 would benefit from one more formal result.  
 For example:  
 **Proposition (Observation Smoothness).**  
 If \mathbf F\in C^\infty(\Omega_0) and the diagnostic functions are smooth, then  
-\Pi_{\rm obs} : \Omega_0\rightarrow\mathcal O  
+\Pi_{\rm obs}:\Omega_0\rightarrow\mathcal O
 is a smooth map.  
 This is straightforward to prove, but it explicitly establishes the regularity assumptions needed for Section 4’s projection theorem.  
-   
+
 ⸻  
-   
+
 ## Overall assessment  
 I would rate the section as follows:  
 
@@ -262,9 +262,9 @@ The section now has a clear logical flow:
 5. Define observation maps.  
 6. Establish smoothness.  
 That is exactly the order I would expect.  
-   
+
 ⸻  
-   
+
 ## 1. One issue needs attention: the slow subsystem denominators  
 The only point I would investigate carefully is the appearance of  
 \frac1{\tilde e}  
@@ -279,9 +279,9 @@ This is not necessarily wrong—it depends on the derivation—but it deserves e
 Even one sentence would help, for example:  
 The factors 1/\tilde e arise solely from the positive time reparameterization. They do not introduce singularities on the positively invariant physical domain \Omega_{\mathrm{phys}}, and the geometric analysis is restricted to this domain.  
 That heads off an obvious reviewer question.  
-   
+
 ⸻  
-   
+
 ## 2. Proposition 2.1  
 I think this proposition is now well stated.  
 The only phrase I might soften is  
@@ -289,80 +289,80 @@ preserving transverse stability signatures.
 I’d write  
 preserving the signs of eigenvalues transverse to normally hyperbolic branches of the critical manifold.  
 That connects directly to Fenichel theory.  
-   
+
 ⸻  
-   
+
 ## 3. The fast subsystem  
 This is now in exactly the form needed for Theorem 1.  
 In fact,  
-F_{\rm fast} = (\tilde F,\tilde H)  
+F_{\rm fast}=(\tilde F,\tilde H)
 allows Section 3 simply to define  
-\mathcal S_0 = \{ F_{\rm fast}=0 \}.  
+\mathcal S_0=\{F_{\rm fast}=0\}.
 That is elegant.  
-   
+
 ⸻  
-   
+
 ## 4. Observation map  
 I particularly like  
-\Pi_{\rm obs} : \Omega_0\rightarrow\mathcal O.  
+\Pi_{\rm obs}:\Omega_0\rightarrow\mathcal O.
 It gives the Projection Theorem a natural setting.  
 One suggestion is to describe \mathcal O in one sentence.  
 For example:  
 The observation space \mathcal O represents the space of smooth diagnostic quantities accessible through field measurements or numerical model output.  
 That makes the codomain more meaningful.  
-   
+
 ⸻  
-   
+
 ## 5. Differential notation  
 The differential  
 D\pi_{Ri}  
 is exactly the right object.  
 I especially like that you express it in terms of  
-d\tilde e, dq_\theta, dS, dT_s, dT_g.  
+d\tilde e,dq_\theta,dS,dT_s,dT_g.
 That makes Section 4 read naturally.  
-   
+
 ⸻  
-   
+
 ## 6. Observation Smoothness proposition  
 This proposition is brief but worthwhile.  
 It formalizes assumptions that later theorems depend on.  
 I would keep it.  
-   
+
 ⸻  
-   
+
 ## 7. One theorem-level improvement  
 I would consider adding a short remark immediately before Section 3.  
 Something like  
 **Remark 2.2 (Geometry versus Observation).**  
-The dynamical system evolves on the five-dimensional state manifold \Omega_0, whereas atmospheric observations are represented by the smooth observation map > \Pi_{\mathrm{obs}}:\Omega_0\to\mathcal O. > Consequently, invariant geometric objects need not appear as invariant objects in observation space.  
+The dynamical system evolves on the five-dimensional state manifold \Omega_0, whereas atmospheric observations are represented by the smooth observation map> \Pi_{\mathrm{obs}}:\Omega_0\to\mathcal O.>Consequently, invariant geometric objects need not appear as invariant objects in observation space.
 That remark prepares the reader psychologically for the Projection Theorem.  
-   
+
 ⸻  
-   
+
 ## 8. One notation suggestion  
 You define  
-\Omega_0 \subset \mathbb R^5  
+\Omega_0\subset\mathbb R^5
 and later  
 \Omega_{\rm phys}.  
 Throughout the remainder of the paper, I would consistently distinguish:  
 * \Omega_0: mathematical chart,  
 * \Omega_{\rm phys}: positively invariant physical region.  
 That distinction will matter if later proofs refer to closures or boundaries.  
-   
+
 ⸻  
-   
+
 ## 9. One small concern  
 This statement:  
 We analyze the dynamics on the regularized chart and then interpret the resulting geometry in the limit \delta\to0^+.  
 is sensible, but I would avoid giving the impression that all limits are already justified. Unless you later prove convergence as \delta \to 0^+, it is safer to say:  
 We formulate the geometric analysis on the regularized chart and use the limit \delta \to 0^+ as the asymptotic interpretation of the physical system.  
 That is a slightly weaker—and more defensible—claim.  
-   
+
 ⸻  
-   
+
 ## Readiness for Section 3  
 I think Section 2 is now sufficiently mature that you can proceed to the critical manifold results. In fact, the definitions line up almost perfectly with the structure of Theorems 1 and 2:  
-* **Theorem 1** can define the critical manifold simply as \mathcal S_0=\{\mathbf x\in\Omega_{\rm phys}:F_{\rm fast}(\mathbf x)=0\}, with the implicit function theorem providing the embedded-manifold result under the appropriate rank condition.  
+* **Theorem 1** can define the critical manifold simply as\mathcal S_0=\{\mathbf x\in\Omega_{\rm phys}:F_{\rm fast}(\mathbf x)=0\},with the implicit function theorem providing the embedded-manifold result under the appropriate rank condition.
 * **Theorem 2** can then define the fold locus by the loss of normal hyperbolicity, expressed in terms of the Jacobian D F_{\rm fast}, and characterize it as a codimension-one submanifold of \mathcal S_0 under the usual nondegeneracy assumptions.  
 With those foundations in place, the Projection Theorem in Section 4 follows naturally from the observation map introduced here. Structurally, the manuscript now has a coherent chain from the smooth dynamical system, to invariant geometry, to observational diagnostics, which is exactly the progression the rest of the paper requires.
 
@@ -372,9 +372,9 @@ With those foundations in place, the Projection Theorem in Section 4 follows nat
 
 This section is much closer to a publishable GSPT formulation. The overall architecture is strong: **regularized state space → smooth vector field → fast/slow hierarchy → observation projection**. The main issues are not conceptual; they are mathematical consistency points that a dynamical systems reviewer would likely flag.  
 Below are the highest-value corrections before locking Section 2.  
-   
+
 ⸻  
-   
+
 ## 1. The chart transformation has a subtle inconsistency  
 The largest issue is the definition  
 \phi_\delta:e\mapsto \tilde e=\sqrt{e+\delta}  
@@ -400,9 +400,9 @@ Under the positive time change, the fast subsystem extends to a smooth vector fi
 with:  
 For fixed \delta>0, the transformed vector field is smooth on the interior chart domain \tilde e>\sqrt{\delta}. The limiting desingularized chart obtained as \delta\rightarrow0^+ extends smoothly across the laminar boundary and yields the polynomial fast normal form used for geometric analysis.  
 This removes a mathematical vulnerability.  
-   
+
 ⸻  
-   
+
 ## 2. The time-rescaling direction needs correction  
 You define:  
 d\tau=\frac{dt}{\epsilon_1\tilde e}  
@@ -413,23 +413,23 @@ But later you write:
 d\tau/dt=\tilde e/\epsilon_1>0.  
 That is incorrect.  
 The inverse is:  
-\boxed{ \frac{d\tau}{dt} = \frac{1}{\epsilon_1\tilde e} }  
+\boxed{\frac{d\tau}{dt}=\frac{1}{\epsilon_1\tilde e}}
 This is minor but important because the orientation-preserving argument depends on the sign.  
 The corrected sentence:  
 Because d\tau/dt=(\epsilon_1\tilde e)^{-1}>0 on \Omega_{\mathrm{phys}}, the time transformation preserves orbit orientation.  
-   
+
 ⸻  
-   
+
 ## 3. Positive invariance of \tilde e>0 needs proof or weakening  
 Assumption A3 says:  
 \tilde e>0  
 is positively invariant.  
 But your fast equation gives:  
-\dot{\tilde e} = \frac12 c_m\ell S^2\tilde e -\frac{g}{2\theta_0}q_\theta -\frac1{2\ell}\tilde e^3.  
+\dot{\tilde e}=\frac12 c_m\ell S^2\tilde e-\frac{g}{2\theta_0}q_\theta-\frac1{2\ell}\tilde e^3.
 At:  
 \tilde e=0  
 we obtain:  
-\dot{\tilde e} = -\frac{g}{2\theta_0}q_\theta .  
+\dot{\tilde e}=-\frac{g}{2\theta_0}q_\theta .
 Therefore the boundary is not automatically invariant unless:  
 q_\theta=0  
 or an additional flux constraint is imposed.  
@@ -437,7 +437,7 @@ This matters because your later Fenichel construction uses the laminar boundary.
 Two options:  
 **Option A (cleaner mathematically)**  
 Change A3:  
-\Omega_{\rm phys} = \{\tilde e>0,S>0,T_s>0,T_g>0\}  
+\Omega_{\rm phys}=\{\tilde e>0,S>0,T_s>0,T_g>0\}
 is **forward invariant away from finite-time escape**, rather than strictly positively invariant.  
 **Option B**  
 Modify heat flux regularization so that:  
@@ -445,9 +445,9 @@ q_\theta=\tilde e\,\hat q_\theta
 which naturally enforces:  
 F_{\rm fast}(0)=0.  
 This is actually attractive physically: turbulent heat transport vanishes with turbulence.  
-   
+
 ⸻  
-   
+
 ## 4. Fast subsystem dimension mismatch  
 You define:  
 F_{\rm fast}=(\tilde F,\tilde H)^T  
@@ -455,25 +455,25 @@ so the fast variables are:
 (\tilde e,q_\theta).  
 Good.  
 But the timescale statement initially implies:  
-\begin{pmatrix} F_{\rm fast}\\ \epsilon_1F_{\rm slow}\\ \epsilon_1\epsilon_2F_{\rm superslow} \end{pmatrix}  
+\begin{pmatrix}F_{\rm fast}\\\epsilon_1F_{\rm slow}\\\epsilon_1\epsilon_2F_{\rm superslow}\end{pmatrix}
 which corresponds to:  
 * fast: 2 variables  
 * slow: 2 variables  
 * superslow: 1 variable  
 Correct.  
 However, later when constructing the critical manifold, explicitly define:  
-\mathcal S_0 = \{x\in\Omega_0: F_{\rm fast}(x)=0\}  
+\mathcal S_0=\{x\in\Omega_0:F_{\rm fast}(x)=0\}
 with:  
 \dim(\mathcal S_0)=3  
 because:  
 5-2=3.  
 This will be important for your fold geometry.  
-   
+
 ⸻  
-   
+
 ## 5. Observation map is excellent, but the Richardson statement needs refinement  
 You write:  
-D\pi_{Ri} = (0,0,\cdots)  
+D\pi_{Ri}=(0,0,\cdots)
 and conclude:  
 Richardson diagnostic is insensitive, at first order, to perturbations in the fast turbulent directions.  
 This is a strong point and should be emphasized.  
@@ -481,15 +481,15 @@ However, mathematically:
 D\pi_{Ri}|_{T\mathcal S_0}  
 is the relevant object, not the full-space derivative.  
 The more geometric statement:  
-D\pi_{Ri} \left( T_x\mathcal F_{\rm fast} \right)=0  
+D\pi_{Ri}\left(T_x\mathcal F_{\rm fast}\right)=0
 where T_x\mathcal F_{\rm fast} is the fast fiber.  
 That connects directly to your projection theorem later.  
-   
+
 ⸻  
-   
+
 ## 6. The slow subsystem freezing argument is good but needs one clarification  
 You write:  
-F_{\rm slow} = \tilde e[\cdots]  
+F_{\rm slow}=\tilde e[\cdots]
 and:  
 slow tendencies freeze in fast time as \tilde e\rightarrow0^+.  
 Correct.  
@@ -502,23 +502,23 @@ However, the actual reduced slow flow is normally obtained after restricting to:
 not simply setting \tilde e=0.  
 I would add:  
 The reduced slow dynamics are obtained by restricting the desingularized vector field to the attracting Fenichel manifold \mathcal S_\epsilon, rather than by evaluating the slow vector field on the singular boundary alone.  
-   
+
 ⸻  
-   
+
 ## 7. The strongest addition: define the fold locus now  
 Given the thesis of the paper, Section 2 should end with the geometric object you will analyze.  
 Add:  
-\mathcal S_0 = \{x:F_{\rm fast}(x)=0\}  
+\mathcal S_0=\{x:F_{\rm fast}(x)=0\}
 and the fold set:  
-\mathcal C_{\rm fold} = \left\{ x\in\mathcal S_0: \det D_{(\tilde e,q_\theta)} F_{\rm fast}(x)=0 \right\}.  
+\mathcal C_{\rm fold}=\left\{x\in\mathcal S_0:\det D_{(\tilde e,q_\theta)}F_{\rm fast}(x)=0\right\}.
 Then define the observation projection:  
-\Gamma_{\rm fold} = \Pi_{\rm obs}(\mathcal C_{\rm fold}).  
+\Gamma_{\rm fold}=\Pi_{\rm obs}(\mathcal C_{\rm fold}).
 This creates the exact bridge:  
-\boxed{ \text{state-space fold} \rightarrow \text{observed Richardson threshold} }  
+\boxed{\text{state-space fold}\rightarrow\text{observed Richardson threshold}}
 which is the central novelty.  
-   
+
 ⸻  
-   
+
 ## Overall assessment  
 I would rate this section:  
 
@@ -1030,9 +1030,9 @@ Bottom line: I think this outline is now publication-grade in structure. The rem
 
 This is the conceptual centerpiece of the manuscript. The narrative is strong: **Richardson thresholds as projections of a higher-dimensional invariant fold geometry** is exactly the kind of reframing that can make the work interesting beyond a parameterization paper. However, at the theorem level there are several mathematical issues that need correction before submission. The good news is that most are repairable without changing the central result.  
 I would separate this into **structural strengths**, **critical mathematical corrections**, and **recommended theorem rewrite**.  
-   
+
 ⸻  
-   
+
 ## 1. Major strength: the geometric narrative is now clear  
 The central chain is excellent:  
 \Omega_0\subset\mathbb{R}^5  
@@ -1053,9 +1053,9 @@ This is the correct geometric interpretation of “threshold variability.”
 The strongest sentence in the section is essentially:  
 A universal invariant object can generate non-universal scalar observations under projection.  
 That is the theorem-level insight.  
-   
+
 ⸻  
-   
+
 ## 2. Critical issue: dimension of the fold locus  
 You repeatedly state:  
 \mathcal C_{\rm fold}\subset\Omega_0  
@@ -1066,23 +1066,23 @@ n=5
 Fast variables:  
 m=2  
 Critical manifold:  
-\mathcal S_0: F_{\rm fast}=0  
+\mathcal S_0:F_{\rm fast}=0
 has dimension:  
 5-2=3.  
 A generic fold condition imposes one additional scalar condition:  
 \det D_yF_{\rm fast}=0.  
 Therefore:  
-\boxed{ \dim(\mathcal C_{\rm fold})=2 }  
+\boxed{\dim(\mathcal C_{\rm fold})=2}
 Correct.  
 However, your parameterization later says:  
 parameterized smoothly by skin temperature T_s and soil temperature T_g.  
 That is not yet demonstrated.  
 You need:  
-\operatorname{rank} D(T_s,T_g)\Pi_{\rm obs}|_{\mathcal C_{\rm fold}} =2.  
+\operatorname{rank}D(T_s,T_g)\Pi_{\rm obs}|_{\mathcal C_{\rm fold}}=2.
 Otherwise the image may collapse to a curve.  
-   
+
 ⸻  
-   
+
 ## 3. The biggest theorem problem: Part 1 rank claim  
 You state:  
 D(\Pi_{\rm obs}|_{\mathcal S_0^+})  
@@ -1091,28 +1091,28 @@ But your proof says:
 the column corresponding to \partial/\partial\tilde e is non-zero  
 That only proves one column is nonzero.  
 You need linear independence of:  
-\frac{\partial\Pi}{\partial\tilde e}, \qquad \frac{\partial\Pi}{\partial T_s}.  
+\frac{\partial\Pi}{\partial\tilde e},\qquad\frac{\partial\Pi}{\partial T_s}.
 The proof needs a determinant argument.  
 For example:  
-\det \begin{pmatrix} \partial_{\tilde e}\pi_H& \partial_{T_s}\pi_H\\ \partial_{\tilde e}\pi_S& \partial_{T_s}\pi_S \end{pmatrix} \neq0.  
+\det\begin{pmatrix}\partial_{\tilde e}\pi_H&\partial_{T_s}\pi_H\\\partial_{\tilde e}\pi_S&\partial_{T_s}\pi_S\end{pmatrix}\neq0.
 Because:  
-\pi_H \propto -\theta_z(T_s)\tilde e^2  
+\pi_H\propto-\theta_z(T_s)\tilde e^2
 and  
 \pi_S=S^*(\tilde e,T_s),  
 you can likely prove this, but it needs to appear.  
-   
+
 ⸻  
-   
+
 ## 4. The analytical Ri_{\rm fold} formula has a dimensional problem  
 You derive:  
-Ri_{\rm fold} = \frac{4\theta_0 C_\theta^2 c_m} {g c_w^2\ell^2\theta_z(T_s)}  
+Ri_{\rm fold}=\frac{4\theta_0 C_\theta^2 c_m}{g c_w^2\ell^2\theta_z(T_s)}
 Check dimensions.  
 Richardson number:  
-Ri= \frac{N^2}{S^2}  
+Ri=\frac{N^2}{S^2}
 where:  
-N^2= \frac{g}{\theta_0}\theta_z.  
+N^2=\frac{g}{\theta_0}\theta_z.
 Units:  
-[g\theta_z/\theta_0] = s^{-2}  
+[g\theta_z/\theta_0]=s^{-2}
 and:  
 S^2=s^{-2}.  
 Your denominator:  
@@ -1130,12 +1130,12 @@ Define closure coefficients explicitly dimensional.
 or:  
 **Option B (preferred)**  
 Nondimensionalize the fast subsystem first and derive:  
-Ri_{\rm fold} = \frac{A}{\Theta}  
+Ri_{\rm fold}=\frac{A}{\Theta}
 where A is a dimensionless closure group.  
 That would actually strengthen the paper because the projection theorem becomes independent of arbitrary units.  
-   
+
 ⸻  
-   
+
 ## 5. The SHEBA/CASES interpretation needs a small correction  
 This statement:  
 stronger surface inversions cause collapse at smaller Richardson number  
@@ -1150,12 +1150,12 @@ Your argument is:
 I would rewrite:  
 Stronger stratification shifts the fold surface in state space such that its projection onto Ri-coordinates occurs at smaller scalar values, even though turbulent suppression increases dynamically.  
 This avoids a likely reviewer misunderstanding.  
-   
+
 ⸻  
-   
+
 ## 6. Environmental constraint manifold definition needs repair  
 You define:  
-\Sigma_{\rm site} = \{x: \Phi_{\rm SEB}(x;\mu_{\rm site})=0\}  
+\Sigma_{\rm site}=\{x:\Phi_{\rm SEB}(x;\mu_{\rm site})=0\}
 inside:  
 \mathbb R^5.  
 One scalar constraint gives:  
@@ -1163,45 +1163,45 @@ One scalar constraint gives:
 not 3.  
 A 3D manifold requires two constraints.  
 You probably need:  
-\Sigma_{\rm site} = \{\Phi_{\rm SEB}=0,\Phi_{\rm forcing}=0\}.  
+\Sigma_{\rm site}=\{\Phi_{\rm SEB}=0,\Phi_{\rm forcing}=0\}.
 Then:  
 5-2=3.  
 This is important because:  
-\gamma_{\rm site} = \mathcal S_0\cap\Sigma_{\rm site}  
+\gamma_{\rm site}=\mathcal S_0\cap\Sigma_{\rm site}
 currently gives:  
 3+4-5=2  
 which is a surface, not a trajectory.  
 You want:  
 3+3-5=1  
 which gives the physical trajectory curve.  
-   
+
 ⸻  
-   
+
 ## 7. Suggested corrected definition  
 Replace:  
-\Sigma_{\mathrm{site}} = \{\Phi_{\rm SEB}=0\}  
+\Sigma_{\mathrm{site}}=\{\Phi_{\rm SEB}=0\}
 with:  
-\boxed{ \Sigma_{\rm site} = \left\{ x\in\Omega_0: \Phi_{\rm SEB}(x;\mu_{\rm site})=0, \quad \Phi_{\rm forc}(x;\mu_{\rm site})=0 \right\} }  
+\boxed{\Sigma_{\rm site}=\left\{x\in\Omega_0:\Phi_{\rm SEB}(x;\mu_{\rm site})=0,\quad\Phi_{\rm forc}(x;\mu_{\rm site})=0\right\}}
 Then:  
 \dim\Sigma_{\rm site}=3  
 and:  
-\gamma_{\rm site} = \mathcal S_0\cap\Sigma_{\rm site}  
+\gamma_{\rm site}=\mathcal S_0\cap\Sigma_{\rm site}
 is generically one-dimensional.  
 That makes Figure 1 mathematically correct.  
-   
+
 ⸻  
-   
+
 ## 8. The theorem should be slightly renamed  
 “Constant-Rank Projection Theorem” is good, but the result is actually stronger.  
 You are proving two things:  
 1. immersion of the observation map;  
 2. non-universal scalar projection.  
 A better title:  
-\boxed{ \textbf{Theorem 3: Fold-Surface Projection and Observational Threshold Variability} }  
+\boxed{\textbf{Theorem 3: Fold-Surface Projection and Observational Threshold Variability}}
 Then the constant-rank condition becomes the mechanism, not the headline.  
-   
+
 ⸻  
-   
+
 ## 9. Final assessment  
 This is the strongest section conceptually, but currently:  
 
@@ -1217,9 +1217,9 @@ This is the strongest section conceptually, but currently:
   
 After those corrections, the theorem becomes much harder to attack.  
 The central result you want to preserve is:  
-\boxed{ Ri_c \neq \text{universal invariant} }  
+\boxed{Ri_c\neq\text{universal invariant}}
 instead:  
-\boxed{ Ri_c = \Pi_{\rm obs} (\mathcal C_{\rm fold} \cap \Sigma_{\rm site}) }  
+\boxed{Ri_c=\Pi_{\rm obs}(\mathcal C_{\rm fold}\cap\Sigma_{\rm site})}
 That is the clean mathematical statement of the Richardson paradox resolution.
 
 ---
@@ -1233,33 +1233,33 @@ This revision is substantially stronger. The previous vulnerabilities were mostl
 * projection interpretation: clarified;  
 * physical stratification caveat: added.  
 The section now reads like a genuine GSPT-based atmospheric dynamics argument rather than a metaphor. However, before calling it “publication-ready,” there are still several **high-level mathematical issues** that remain. They are narrower than before, but important.  
-   
+
 ⸻  
-   
+
 ## 1. The nondimensional Richardson formula is still not algebraically consistent  
 This is the remaining major issue.  
 You define:  
-\Theta_z(T_s) = \frac{g}{\theta_0}\theta_z(T_s)\frac{\ell^2}{u_0^2} = \frac{N^2\ell^2}{u_0^2}.  
+\Theta_z(T_s)=\frac{g}{\theta_0}\theta_z(T_s)\frac{\ell^2}{u_0^2}=\frac{N^2\ell^2}{u_0^2}.
 Then claim:  
-Ri_{\rm fold} = \frac{\mathcal A_{\rm turb}}{\Theta_z}.  
+Ri_{\rm fold}=\frac{\mathcal A_{\rm turb}}{\Theta_z}.
 But starting from:  
-Ri_{\rm fold} = \frac{4\theta_0 C_\theta^2 c_m} {g c_w^2\ell^2\theta_z},  
+Ri_{\rm fold}=\frac{4\theta_0 C_\theta^2 c_m}{g c_w^2\ell^2\theta_z},
 and substituting:  
 N^2=\frac g{\theta_0}\theta_z,  
 gives:  
-Ri_{\rm fold} = \frac{4C_\theta^2c_m} {c_w^2\ell^2N^2}.  
+Ri_{\rm fold}=\frac{4C_\theta^2c_m}{c_w^2\ell^2N^2}.
 Now:  
-\Theta_z = \frac{N^2\ell^2}{u_0^2}  
+\Theta_z=\frac{N^2\ell^2}{u_0^2}
 so:  
-\frac1{\Theta_z} = \frac{u_0^2}{N^2\ell^2}.  
+\frac1{\Theta_z}=\frac{u_0^2}{N^2\ell^2}.
 Therefore:  
-Ri_{\rm fold} = \frac{4C_\theta^2c_m}{c_w^2u_0^2} \frac1{\Theta_z}.  
+Ri_{\rm fold}=\frac{4C_\theta^2c_m}{c_w^2u_0^2}\frac1{\Theta_z}.
 The missing factor is:  
 u_0^{-2}.  
 Therefore either:  
 **Option A (recommended)**  
 Define:  
-\boxed{ \mathcal A_{\rm turb} = \frac{4C_\theta^2c_m}{c_w^2u_0^2} }  
+\boxed{\mathcal A_{\rm turb}=\frac{4C_\theta^2c_m}{c_w^2u_0^2}}
 if u_0 is dimensional.  
 or:  
 **Option B**  
@@ -1267,26 +1267,26 @@ Choose the nondimensional velocity scale:
 u_0=1  
 explicitly after nondimensionalization.  
 At present, a careful reviewer will notice this.  
-   
+
 ⸻  
-   
+
 ## 2. The fold image dimension proof has a hidden contradiction  
 You state:  
 Because the rank of D_{(T_s,T_g)}(\Pi_{\rm obs}|_{\mathcal C_{\rm fold}}) equals 2 everywhere…  
 But your own fold image is:  
-\Pi_{\rm obs}|_{\mathcal C_{\rm fold}} = \begin{pmatrix} S_{\rm fold}(T_s)\\ H_{\rm fold}(T_s)\\ Ri_{\rm fold}(T_s) \end{pmatrix}.  
+\Pi_{\rm obs}|_{\mathcal C_{\rm fold}}=\begin{pmatrix}S_{\rm fold}(T_s)\\H_{\rm fold}(T_s)\\Ri_{\rm fold}(T_s)\end{pmatrix}.
 There is **no **T_g** dependence**.  
 Therefore:  
 \frac{\partial \Pi}{\partial T_g}=0.  
 The rank cannot be 2.  
 This is the most important remaining issue.  
 You have two choices.  
-   
+
 ⸻  
-   
+
 ## Solution A (cleanest): make the image a curve  
 Then:  
-\Gamma_{\rm fold} = \Pi_{\rm obs}(\mathcal C_{\rm fold})  
+\Gamma_{\rm fold}=\Pi_{\rm obs}(\mathcal C_{\rm fold})
 is actually:  
 \dim(\Gamma_{\rm fold})=1.  
 This is not fatal.  
@@ -1296,23 +1296,23 @@ is 2D in state space, but observation collapses one dimension.
 This is actually a **stronger projection result**.  
 The observational map loses information.  
 That fits your thesis beautifully:  
-\boxed{ 2D\text{ invariant fold} \rightarrow 1D\text{ observed threshold curve} }  
-   
+\boxed{2D\text{ invariant fold}\rightarrow1D\text{ observed threshold curve}}
+
 ⸻  
-   
+
 ## Solution B: introduce a soil diagnostic  
 If you want:  
 \dim\Gamma_{\rm fold}=2,  
 then your observation operator needs a T_g-dependent observable.  
 For example:  
-\pi_G = \frac{k_g}{d_g}(T_s-T_g)  
+\pi_G=\frac{k_g}{d_g}(T_s-T_g)
 or ground heat flux.  
 Then:  
-\Pi_{\rm obs} = (Ri,H,S,G)  
+\Pi_{\rm obs}=(Ri,H,S,G)
 and the fold image can genuinely be 2D.  
-   
+
 ⸻  
-   
+
 ## 3. The theorem statement should reflect the observation loss  
 Currently:  
 Its image … is a 2-dimensional smooth surface in diagnostic space.  
@@ -1320,9 +1320,9 @@ Given the current diagnostics, this is not true.
 A stronger theorem would say:  
 The fold locus is a two-dimensional invariant surface in state space. Under incomplete atmospheric observation operators, its projection may reduce dimension and produce apparent scalar thresholds.  
 That is actually closer to your original thesis.  
-   
+
 ⸻  
-   
+
 ## 4. The rank proof needs a non-fold condition statement  
 You prove:  
 \det J_\mu\neq0  
@@ -1330,15 +1330,15 @@ using:
 \theta_z'(T_s)\neq0.  
 But this excludes neutral stratification profiles.  
 You should state the assumption:  
-\boxed{ \theta_z'(T_s)\neq0 }  
+\boxed{\theta_z'(T_s)\neq0}
 locally on the atmospheric branch.  
 Otherwise a reviewer can ask:  
 “What happens over regions where the inversion profile is approximately constant?”  
 Add:  
 The immersion result is local on stratification intervals where \theta_z(T_s) is monotone.  
-   
+
 ⸻  
-   
+
 ## 5. The site constraint manifold is now correct  
 This part is good:  
 \dim(\Sigma_{\rm site})=3  
@@ -1346,12 +1346,12 @@ and:
 3+3-5=1.  
 The physical trajectory curve is exactly the right GSPT object.  
 No change needed.  
-   
+
 ⸻  
-   
+
 ## 6. The figure should change one label  
 Your figure currently says:  
-\Gamma_{\rm fold} = \Pi_{\rm obs}(\mathcal C_{\rm fold})  
+\Gamma_{\rm fold}=\Pi_{\rm obs}(\mathcal C_{\rm fold})
 and depicts a surface.  
 With the current observation vector:  
 (Ri,H,S)  
@@ -1359,20 +1359,20 @@ but no T_g-dependent diagnostic, the figure is misleading.
 Either:  
 * add G to the observation space, or  
 * draw \Gamma_{\rm fold} as a curve embedded in \mathbb R^3.  
-   
+
 ⸻  
-   
+
 ## 7. The scientific claim is actually stronger if you accept the collapse  
 The interesting mathematical statement becomes:  
-\mathcal C_{\rm fold}^{(2D)} \stackrel{\Pi_{\rm obs}}{\longrightarrow} \Gamma_{\rm fold}^{(1D)}  
+\mathcal C_{\rm fold}^{(2D)}\stackrel{\Pi_{\rm obs}}{\longrightarrow}\Gamma_{\rm fold}^{(1D)}
 followed by:  
-\Gamma_{\rm fold} \cap \Pi_{\rm obs}(\gamma_{\rm site}) \rightarrow Ri_c^{obs}.  
+\Gamma_{\rm fold}\cap\Pi_{\rm obs}(\gamma_{\rm site})\rightarrowRi_c^{obs}.
 This says:  
 **different campaigns do not see different folds; they sample different parts of the same fold projection.**  
 That is arguably a cleaner explanation than a 2D diagnostic surface.  
-   
+
 ⸻  
-   
+
 ## Final assessment  
 After this revision:  
 
@@ -1993,9 +1993,9 @@ Your bibliography has four major pillars:
     * Rodas5P  
     * Continuation methods  
 That is exactly the balance reviewers typically expect.  
-   
+
 ⸻  
-   
+
 ## References I would add  
 **Fenichel precursor**  
 ```
@@ -2010,9 +2010,9 @@ That is exactly the balance reviewers typically expect.
 
 ```
 This is the original invariant manifold theorem.  
-   
+
 ⸻  
-   
+
 **Canard blow-up theory**  
 Since your fold projection theorem relies on generic folds, reviewers may expect  
 ```
@@ -2027,9 +2027,9 @@ Dumortier & Roussarie (1996)
 
 ```
 You don’t need heavy use of it, but it signals awareness of nonhyperbolic analysis.  
-   
+
 ⸻  
-   
+
 **Whitney singularity theory**  
 Because your manuscript repeatedly discusses fold surfaces,  
 ```
@@ -2040,9 +2040,9 @@ Annals of Mathematics.
 ```
 is almost mandatory.  
 Your fold is mathematically a Whitney fold.  
-   
+
 ⸻  
-   
+
 **Thom catastrophe theory**  
 Only if you mention cusp catastrophes.  
 ```
@@ -2050,9 +2050,9 @@ René Thom (1972)
 Structural Stability and Morphogenesis
 
 ```
-   
+
 ⸻  
-   
+
 **Takens embedding**  
 Since you reconstruct observation manifolds,  
 ```
@@ -2062,9 +2062,9 @@ Detecting Strange Attractors in Turbulence
 ```
 is a standard citation.  
 Even though you are not doing delay embeddings directly, reviewers associate manifold reconstruction with Takens.  
-   
+
 ⸻  
-   
+
 **Whitney embedding theorem**  
 Since Paper 1 emphasizes projections,  
 ```
@@ -2073,9 +2073,9 @@ Differentiable Manifolds
 
 ```
 or a modern differential topology text can support the projection arguments.  
-   
+
 ⸻  
-   
+
 ## Atmospheric additions  
 I would also add  
 **Stull**  
@@ -2085,9 +2085,9 @@ An Introduction to Boundary Layer Meteorology
 
 ```
 Almost every JAS SBL paper cites it.  
-   
+
 ⸻  
-   
+
 **Garratt**  
 ```
 Garratt (1992)
@@ -2095,9 +2095,9 @@ The Atmospheric Boundary Layer
 
 ```
 Another standard reference.  
-   
+
 ⸻  
-   
+
 **Monin–Obukhov**  
 Even if MOST is criticized,  
 reviewers expect at least one canonical citation.  
@@ -2105,9 +2105,9 @@ Either
 * Monin & Obukhov (1954)  
 or  
 * Businger et al. (1971)  
-   
+
 ⸻  
-   
+
 ## One citation I would probably remove  
 The 1995 England paper  
 ```
@@ -2117,9 +2117,9 @@ England1995
 appears in  
 Oceanographic Literature Review  
 which is an indexing journal rather than the original publication venue. If the underlying paper appeared elsewhere, cite the original article instead.  
-   
+
 ⸻  
-   
+
 ## One metadata correction  
 ```
 HairerWanner1996
@@ -2136,9 +2136,9 @@ HairerWanner2010
 
 ```
 or use the original 1996 edition consistently.  
-   
+
 ⸻  
-   
+
 ## Another correction  
 ```
 zilitinkevich2007
@@ -2155,9 +2155,9 @@ Atmospheric Boundary Layers
 
 ```
 The citation appears to have mixed the journal name with the subject.  
-   
+
 ⸻  
-   
+
 ## Overall assessment  
 For a **Journal of the Atmospheric Sciences** submission, I would rate the bibliography:  
 * **Mathematics:** 9.8/10  

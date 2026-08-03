@@ -223,6 +223,10 @@ INPUT reports/generated/figures/manifold.png
 INPUT reports/generated/figures/manifold.png
 INPUT reports/generated/figures/manifold.png
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
+INPUT reports/generated/paper.bbl
+INPUT reports/generated/paper.bbl
+INPUT reports/generated/paper.bbl
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/ec-lmri10.tfm
 INPUT reports/generated/paper.aux
 INPUT reports/generated/paper.out
 INPUT reports/generated/paper.out
@@ -241,6 +245,7 @@ INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr5.pfb
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr6.pfb
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr7.pfb
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr8.pfb
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri10.pfb
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy10.pfb
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy7.pfb
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy8.pfb
