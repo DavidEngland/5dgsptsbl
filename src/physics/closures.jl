@@ -79,3 +79,9 @@ end
                   (3 * params.delta) / (params.cm * ell^2)
     return sqrt(max(zero(ignition_sq), ignition_sq))
 end
+
+@inline function smooth_desingularization_scale(e_tilde, params::SBLParams)
+    floor = sqrt(params.delta)
+    # C-infinity replacement for max(e_tilde, sqrt(delta)) in slow-time rescaling.
+    return smooth_max(e_tilde - floor, 1e-4) + floor
+end

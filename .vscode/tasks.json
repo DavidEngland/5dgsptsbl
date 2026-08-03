@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Assemble & Build PDF",
+      "type": "shell",
+      "command": "julia",
+      "args": [
+        "--project=.",
+        "scripts/assemble_manuscript.jl"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run CASES-99 Simulation",
+      "type": "shell",
+      "command": "julia",
+      "args": [
+        "--project=.",
+        "scripts/run_cases99.jl"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

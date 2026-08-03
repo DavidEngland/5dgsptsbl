@@ -5,24 +5,24 @@ The style file: unsrtnat.bst
 Database file #1: paper1.bib
 You've used 37 entries,
             2481 wiz_defined-function locations,
-            863 strings with 13262 characters,
-and the built_in function-call counts, 16608 in all, are:
-= -- 1432
-> -- 947
-< -- 25
-+ -- 357
-- -- 283
-* -- 1473
-:= -- 2715
-add.period$ -- 154
+            864 strings with 13568 characters,
+and the built_in function-call counts, 16700 in all, are:
+= -- 1435
+> -- 959
+< -- 26
++ -- 361
+- -- 287
+* -- 1493
+:= -- 2729
+add.period$ -- 153
 call.type$ -- 37
 change.case$ -- 71
 chr.to.int$ -- 37
 cite$ -- 37
-duplicate$ -- 729
-empty$ -- 1409
-format.name$ -- 346
-if$ -- 3456
+duplicate$ -- 730
+empty$ -- 1412
+format.name$ -- 350
+if$ -- 3468
 int.to.chr$ -- 1
 int.to.str$ -- 38
 missing$ -- 41
@@ -34,13 +34,13 @@ purify$ -- 37
 quote$ -- 0
 skip$ -- 420
 stack$ -- 0
-substring$ -- 914
-swap$ -- 94
-text.length$ -- 4
+substring$ -- 924
+swap$ -- 96
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 247
 warning$ -- 0
-while$ -- 141
+while$ -- 142
 width$ -- 0
-write$ -- 575
+write$ -- 576

@@ -31,6 +31,41 @@ function build_sections(section_dir::String, context::Dict{String,String})
     return join(blocks, "\n\n")
 end
 
+function copy_bibliography(outdir::String)
+    src_bib = joinpath("notes", "manuscript", "paper1.bib")
+    dst_bib = joinpath(outdir, "paper1.bib")
+    if isfile(src_bib)
+        cp(src_bib, dst_bib; force = true)
+        println("Copied bibliography to ", dst_bib)
+    else
+        @warn "Bibliography source not found" src_bib
+    end
+end
+
+function run_latexmk(outdir::String)
+    tex_path = joinpath(outdir, "paper.tex")
+    cmd = `latexmk -pdf -outdir=$outdir $tex_path`
+    run(cmd)
+end
+
+function summarize_build_diagnostics(outdir::String)
+    log_path = joinpath(outdir, "paper.log")
+    if !isfile(log_path)
+        println("Build diagnostics: no LaTeX log found at ", log_path)
+        return
+    end
+
+    log_text = read_text(log_path)
+    missing_citations = collect(eachmatch(r"Citation .* undefined", log_text))
+    undefined_refs = collect(eachmatch(r"Reference .* undefined", log_text))
+    missing_graphics = collect(eachmatch(r"File `[^`]+` not found", log_text))
+
+    println("Build diagnostics summary:")
+    println("  Missing citations: ", length(missing_citations))
+    println("  Undefined references: ", length(undefined_refs))
+    println("  Missing graphics: ", length(missing_graphics))
+end
+
 function main()
     outdir = joinpath("reports", "generated")
     mkpath(outdir)
@@ -60,6 +95,9 @@ function main()
     write(outpath, paper_tex)
 
     println("Wrote ", outpath)
+    copy_bibliography(outdir)
+    run_latexmk(outdir)
+    summarize_build_diagnostics(outdir)
 end
 
 main()

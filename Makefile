@@ -1,4 +1,4 @@
-.PHONY: bootstrap cases99 manifold figures assemble-manuscript bibtex-paper paper paper-all clean
+.PHONY: bootstrap test cases99 manifold figures assemble-manuscript bibtex-paper paper paper-all clean
 
 LATEXMK ?= latexmk
 LATEXMKFLAGS ?= -pdf -interaction=nonstopmode -halt-on-error -file-line-error
@@ -6,6 +6,9 @@ BIBTEX ?= bibtex
 
 bootstrap:
 	julia --project=. -e 'using Pkg; Pkg.instantiate()'
+
+test:
+	julia --project=. test/runtests.jl
 
 cases99:
 	julia --project=. scripts/run_cases99.jl
@@ -15,7 +18,7 @@ manifold:
 
 figures: cases99 manifold
 
-assemble-manuscript:
+assemble-manuscript: figures
 	mkdir -p reports/generated/figures
 	@if [ -d paper/figures ]; then cp -r paper/figures/* reports/generated/figures/ 2>/dev/null || true; fi
 	@if [ -f notes/manuscript/paper1.bib ]; then cp notes/manuscript/paper1.bib reports/generated/ 2>/dev/null || true; fi
@@ -38,4 +41,4 @@ paper: assemble-manuscript
 paper-all: figures paper
 
 clean:
-	rm -rf reports/generated
+	rm -rf reports/generated paper/figures

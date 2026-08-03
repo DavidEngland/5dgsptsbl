@@ -2,7 +2,7 @@
     return u[idx]
 end
 
-@inline _desingularization_scale(e_tilde, params::SBLParams) = max(e_tilde, sqrt(params.delta))
+@inline _desingularization_scale(e_tilde, params::SBLParams) = smooth_desingularization_scale(e_tilde, params)
 
 @inline function shear_forcing(S::T, params::SBLParams) where {T<:Real}
     return (params.S_geo - S) / params.tau_S

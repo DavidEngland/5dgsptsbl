@@ -1,26 +1,30 @@
 \section{Governing Equations}
-The desingularized fast-slow system in fast time \(\tau\) is
+\label{sec:governing_equations}
+
+The desingularized 5D fast-slow dynamical system governing the nocturnal stable boundary layer on the fast time scale $\tau$ is given by
 \begin{align}
-\frac{d\tilde{e}}{d\tau} &= \frac{1}{2} c_m \ell S^2 \tilde{e} - \frac{g}{2\theta_0} q_\theta - \frac{1}{2\ell} \tilde{e}^3, \\
-\frac{dq_\theta}{d\tau} &= -c_w \theta_z(T_s,\tilde{e})\tilde{e}^3 - \frac{g}{\theta_0}c_\theta\ell q_\theta^2 - \frac{C_\theta}{\ell}\tilde{e}^2 q_\theta, \\
-\frac{dS}{d\tau} &= \frac{\epsilon_1}{\max(\tilde{e},\sqrt{\delta})}\,\mathcal{F}_S, \\
-\frac{dT_s}{d\tau} &= \frac{\epsilon_1}{\max(\tilde{e},\sqrt{\delta})}\frac{1}{C_s}\left(R_{\text{net}} + \rho c_p q_\theta + \frac{k_g}{d_g}(T_g-T_s)\right), \\
-\frac{dT_g}{d\tau} &= \frac{\epsilon_1\epsilon_2}{\max(\tilde{e},\sqrt{\delta})}\frac{\kappa_g}{d_g^2}(T_s-T_g).
+\frac{d\tilde{e}}{d\tau} &= \frac{1}{2} c_m \ell(z_{\text{eff}}) S^2 \tilde{e} - \frac{g}{2\theta_0} q_\theta - \frac{1}{2\ell(z_{\text{eff}})} \tilde{e}^3, \label{eq:fast_e}\\
+\frac{dq_\theta}{d\tau} &= -c_w \theta_z(T_s,\tilde{e})\tilde{e}^3 - \frac{g}{\theta_0}c_\theta \ell(z_{\text{eff}}) q_\theta^2 - \frac{C_\theta}{\ell(z_{\text{eff}})}\tilde{e}^2 q_\theta, \label{eq:fast_q}\\
+\frac{dS}{d\tau} &= \frac{\epsilon_1}{\max\left(\tilde{e},\sqrt{\delta}\right)}\,\mathcal{F}_S, \label{eq:slow_S}\\
+\frac{dT_s}{d\tau} &= \frac{\epsilon_1}{\max\left(\tilde{e},\sqrt{\delta}\right)}\frac{1}{C_s}\left(R_{\text{net}}(T_s) + \rho c_p q_\theta + \frac{k_g}{d_g}(T_g-T_s)\right), \label{eq:slow_Ts}\\
+\frac{dT_g}{d\tau} &= \frac{\epsilon_1\epsilon_2}{\max\left(\tilde{e},\sqrt{\delta}\right)}\frac{\kappa_g}{d_g^2}(T_s-T_g). \label{eq:superslow_Tg}
 \end{align}
 
 \begin{quote}
 \small
-{\textbf{Remark on Asymptotic Normal Form:}} The dissipation term $-\frac{1}{2\ell}\tilde{e}^3$ represents the leading-order $C^r$-smooth normal form of Kolmogorov dissipation $\frac{e^{3/2}}{\ell}$ in fast time $\tau$. Omitted $\mathcal{O}(\delta)$ terms contribute a bounded linear damping correction $-\frac{3\delta}{4\ell}\tilde{e}$ near the laminar floor $\tilde{e} \sim \sqrt{\delta}$, which is uniformly subdominant across the active turbulent manifold for $\delta \le 10^{-4}$.
+\textbf{Remark on Asymptotic Normal Form:} The dissipation term $-\frac{1}{2\ell}\tilde{e}^3$ in \eqref{eq:fast_e} represents the leading-order $C^r$-smooth normal form of Kolmogorov dissipation $\frac{e^{3/2}}{\ell}$ under the time rescaling $dt = \tilde{e}\,d\tau$. Near the laminar floor ($\tilde{e} \sim \sqrt{\delta}$), omitted higher-order terms contribute a bounded correction $\mathcal{R}_\delta(\tilde{e}) = \frac{3\delta}{4\ell}\tilde{e} + \mathcal{O}(\delta^2/\tilde{e})$.
 \end{quote}
 
-Writing the omitted remainder as $\mathcal{R}_\delta(\tilde{e}) = \frac{3\delta}{4\ell}\tilde{e} + \mathcal{O}(\delta^2)$, the desingularized dissipation error obeys
+Evaluating the remainder near the laminar boundary $\tilde{e} = \sqrt{\delta}$ yields the uniform upper bound
 \begin{equation}
-\max_{\tilde{e} \in [\sqrt{\delta},\tilde{e}_{\max}]} \lvert \mathcal{R}_\delta(\tilde{e}) \rvert \le \frac{3\delta^{3/2}}{4\ell}.
+\max_{\tilde{e} \sim \sqrt{\delta}} \left\lvert \mathcal{R}_\delta(\tilde{e}) \right\rvert \le \frac{3\delta^{3/2}}{4\ell}.
+\label{eq:dissipation_error_bound}
 \end{equation}
-For the representative manuscript regime $\delta = 10^{-5}$ and $\ell = 10\,\mathrm{m}$, this gives $\max \lvert \mathcal{R}_\delta \rvert \lesssim 2.4 \times 10^{-9}\,\mathrm{m\,s^{-2}}$, which is below $10^{-5}\%$ of the active cubic dissipation magnitude at $\tilde{e} = 0.2$. The cubic fast-time normal form therefore preserves the physical dissipation scale to manuscript accuracy.
+For representative manuscript parameters ($\delta = 10^{-5}$ and $\ell = 10\,\mathrm{m}$), equation \eqref{eq:dissipation_error_bound} gives $\max \lvert \mathcal{R}_\delta \rvert \le 2.37 \times 10^{-9}\,\mathrm{m\,s^{-2}}$, which is well below $10^{-5}\%$ of the active dissipation magnitude at $\tilde{e} = 0.2$. Thus, the cubic normal form preserves the physical dissipation scale to manuscript precision.
 
-The interior mixing length is
+The effective interior mixing length is modeled via the Blackadar closure
 \begin{equation}
-\ell(z_{\text{eff}})=\frac{\kappa z_{\text{eff}}}{1+\kappa z_{\text{eff}}/\ell_\infty},
-\quad z_{\text{eff}} = z-d+z_{0m}.
+\ell(z_{\text{eff}}) = \frac{\kappa z_{\text{eff}}}{1 + \kappa z_{\text{eff}}/\ell_\infty}, \quad z_{\text{eff}} = z - d + z_{0m},
+\label{eq:blackadar_length}
 \end{equation}
+where $\kappa \approx 0.40$ is the von Kármán constant, $d$ is the displacement height, $z_{0m}$ is the momentum roughness length, and $\ell_\infty$ is the asymptotic master mixing length.

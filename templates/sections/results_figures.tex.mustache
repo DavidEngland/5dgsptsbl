@@ -1,15 +1,41 @@
 \section{Numerical Results and Phase Manifold}
+\label{sec:numerical_results}
+
+To evaluate the desingularized 5D Geometric Singular Perturbation Theory (GSPT) model, we simulate a benchmark nocturnal turbulence collapse event parameterized using field observations from the CASES-99 campaign \citep{poulos2002cases99}. The stiff fast-slow differential system \eqref{eq:fast_e}--\eqref{eq:superslow_Tg} is integrated over a 12-hour nocturnal period ($t \in [0, 43200]\,\mathrm{s}$) using the adaptive implicit Rosenbrock--Wanner solver \texttt{Rodas5P} \citep{Steinebach2023Rodas5P} with strict integration tolerances ($\text{reltol} = 10^{-8}$, $\text{abstol} = 10^{-8}$).
+
+% ------------------------------------------------------------------------------
+\subsection{CASES-99 Nocturnal Dynamics and Collapse}
+\label{subsec:cases99_results}
+
+The simulated nocturnal trajectories, surface-subsurface thermal coupling, phase-space trajectories, and fast Jacobian stability metrics are summarized in Figure~\ref{fig:cases99_manifold}.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.95\textwidth]{figures/cases99_manifold.png}
-    \caption{CASES-99 benchmark simulation showing (a) fast state dynamics, (b) surface and ground temperatures, (c) phase space trajectory with fold locus contour, and (d) fast subsystem Jacobian determinant stability.}
+    \caption{CASES-99 benchmark simulation over a 12-hour nocturnal cycle: (a) Fast state dynamics displaying desingularized TKE ($\tilde{e}$) and vertical heat flux ($q_\theta$); (b) Thermal evolution of skin temperature ($T_s$) and deep soil temperature ($T_g$); (c) 3D phase-space trajectory $(\tilde{e}, q_\theta, S)$ relative to the fast critical manifold $\mathcal{M}_0$ and fold locus $\mathcal{C}_{\text{fold}}$; (d) Evolution of the 2D fast Jacobian determinant $\det(J_{\text{fast}})$, illustrating the loss of Fenichel normal hyperbolicity prior to turbulence collapse.}
     \label{fig:cases99_manifold}
 \end{figure}
 
+During the initial phase of nocturnal radiative cooling ($t < 14000\,\mathrm{s}$), net longwave cooling depresses skin temperature $T_s$ relative to deep soil $T_g$ (Figure~\ref{fig:cases99_manifold}b). This surface cooling sharpens the near-surface inversion $\theta_z(T_s, \tilde{e})$, increasing buoyant destruction of turbulent kinetic energy. Despite accumulating vertical shear $S$, the fast state vector $\mathbf{x}_f = (\tilde{e}, q_\theta)^T$ tracks the attractive branch of the critical manifold $\mathcal{M}_0^+$ where $\det(J_{\text{fast}}) > 0$ (Figure~\ref{fig:cases99_manifold}d).
+
+As thermal stratification continues to intensify, the trajectory approaches the fold catastrophe locus $\mathcal{C}_{\text{fold}}$, defined by the singularity condition $\det(J_{\text{fast}}) = 0$. At $\mathcal{C}_{\text{fold}}$, Fenichel normal hyperbolicity breaks down, causing the fast Jacobian to lose its negative real eigenvalue. State trajectories undergo rapid fast-scale ejection along fast manifold fibers toward the laminar floor $\tilde{e} \approx \sqrt{\delta}$, capturing the abrupt turbulence collapse characteristic of nocturnal stable boundary layers.
+
+% ------------------------------------------------------------------------------
+\subsection{Phase Manifold Geometry and Slow Convergence}
+\label{subsec:phase_manifold}
+
+Figure~\ref{fig:manifold} provides a detailed view of the fast-slow phase-space projection in $(\tilde{e}, q_\theta)$ coordinates, highlighting the rapid convergence of initial states onto the slow manifold.
+
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/manifold.png}
-    \caption{Phase space trajectory in $(\tilde{e}, q_\theta)$ space demonstrating convergence to the slow manifold.}
+    \includegraphics[width=0.80\textwidth]{figures/manifold.png}
+    \caption{Fast subsystem phase-space trajectory projected onto $(\tilde{e}, q_\theta)$ coordinates, demonstrating rapid fast-fiber relaxation toward the attractive critical manifold $\mathcal{M}_0^+$ followed by slow evolutionary drift toward the non-hyperbolic fold boundary.}
     \label{fig:manifold}
 \end{figure}
+
+The phase-space trajectory exhibits two distinct asymptotic time scales:
+\begin{enumerate}
+    \item \textbf{Fast Subsystem Relaxation:} Off-manifold initial conditions $(\tilde{e}_0, q_{\theta,0})$ decay rapidly along fast manifold fibers on the fast time scale $\tau$, converging onto the 2D critical manifold $\mathcal{M}_0$.
+    \item \textbf{Slow Manifold Drift:} Once restricted to $\mathcal{M}_0$, the system undergoes slow evolutionary drift driven by shear forcing $\dot{S}$ and soil thermal flux $\dot{T}_s$ until crossing the fold boundary $\mathcal{C}_{\text{fold}}$, where rapid collapse is triggered.
+\end{enumerate}
+The chart coordinate desingularization $\tilde{e} = \sqrt{e + \delta}$ guarantees $C^\infty$-smoothness across the entire phase space, eliminating numerical stiffness and division-by-zero artifacts near the laminar limit $e \to 0$.

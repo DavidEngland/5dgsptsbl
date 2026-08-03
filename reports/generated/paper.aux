@@ -3,54 +3,84 @@
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Closures and Smooth Regularization}{1}{section.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Transcritical Ignition and Surface-Flux Parameterization}{1}{subsection.1.1}\protected@file@percent }
+\newlabel{sec:closures}{{1}{1}{Closures and Smooth Regularization}{section.1}{}}
+\newlabel{eq:smooth_max}{{1}{1}{Closures and Smooth Regularization}{equation.1}{}}
+\newlabel{eq:theta_z_closure}{{2}{1}{Closures and Smooth Regularization}{equation.2}{}}
+\newlabel{eq:C_D}{{3}{1}{Closures and Smooth Regularization}{equation.3}{}}
+\newlabel{eq:C_H}{{4}{1}{Closures and Smooth Regularization}{equation.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Transcritical Ignition and Surface-Flux Parameterization}{2}{subsection.1.1}\protected@file@percent }
+\newlabel{subsec:ignition_and_flux}{{1.1}{2}{Transcritical Ignition and Surface-Flux Parameterization}{subsection.1.1}{}}
+\newlabel{eq:tke_linearization}{{5}{2}{Transcritical Ignition and Surface-Flux Parameterization}{equation.5}{}}
+\newlabel{eq:S_trans}{{6}{2}{Transcritical Ignition and Surface-Flux Parameterization}{equation.6}{}}
+\newlabel{eq:Pi_G}{{7}{2}{Transcritical Ignition and Surface-Flux Parameterization}{equation.7}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Projection and Unfolding Proof Sketches}{2}{subsection.1.2}\protected@file@percent }
-\bibstyle{unsrtnat}
+\newlabel{subsec:proof_sketches}{{1.2}{2}{Projection and Unfolding Proof Sketches}{subsection.1.2}{}}
+\newlabel{eq:D_pi_Ri}{{8}{2}{Projection and Unfolding Proof Sketches}{equation.8}{}}
+\newlabel{eq:kernel_dimension}{{9}{2}{Projection and Unfolding Proof Sketches}{equation.9}{}}
+\newlabel{eq:unfolding_matrix}{{10}{2}{Projection and Unfolding Proof Sketches}{equation.10}{}}
+\newlabel{eq:det_M}{{11}{3}{Projection and Unfolding Proof Sketches}{equation.11}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Governing Equations}{3}{section.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3}Notes Traceability}{3}{section.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces CASES-99 benchmark simulation showing (a) fast state dynamics, (b) surface and ground temperatures, (c) phase space trajectory with fold locus contour, and (d) fast subsystem Jacobian determinant stability.}}{4}{figure.1}\protected@file@percent }
-\newlabel{fig:cases99_manifold}{{1}{4}{CASES-99 benchmark simulation showing (a) fast state dynamics, (b) surface and ground temperatures, (c) phase space trajectory with fold locus contour, and (d) fast subsystem Jacobian determinant stability}{figure.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Phase space trajectory in $(\tilde  {e}, q_\theta )$ space demonstrating convergence to the slow manifold.}}{5}{figure.2}\protected@file@percent }
-\newlabel{fig:manifold}{{2}{5}{Phase space trajectory in $(\tilde {e}, q_\theta )$ space demonstrating convergence to the slow manifold}{figure.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Numerical Results and Phase Manifold}{5}{section.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Reproducibility}{5}{section.5}\protected@file@percent }
+\newlabel{sec:governing_equations}{{2}{3}{Governing Equations}{section.2}{}}
+\newlabel{eq:fast_e}{{12}{3}{Governing Equations}{equation.12}{}}
+\newlabel{eq:fast_q}{{13}{3}{Governing Equations}{equation.13}{}}
+\newlabel{eq:slow_S}{{14}{3}{Governing Equations}{equation.14}{}}
+\newlabel{eq:slow_Ts}{{15}{3}{Governing Equations}{equation.15}{}}
+\newlabel{eq:superslow_Tg}{{16}{3}{Governing Equations}{equation.16}{}}
+\newlabel{eq:dissipation_error_bound}{{17}{3}{Governing Equations}{equation.17}{}}
+\newlabel{eq:blackadar_length}{{18}{3}{Governing Equations}{equation.18}{}}
+\citation{poulos2002cases99}
+\citation{Steinebach2023Rodas5P}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Notes Traceability and Architecture Alignment}{4}{section.3}\protected@file@percent }
+\newlabel{sec:notes_traceability}{{3}{4}{Notes Traceability and Architecture Alignment}{section.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Numerical Results and Phase Manifold}{4}{section.4}\protected@file@percent }
+\newlabel{sec:numerical_results}{{4}{4}{Numerical Results and Phase Manifold}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}CASES-99 Nocturnal Dynamics and Collapse}{4}{subsection.4.1}\protected@file@percent }
+\newlabel{subsec:cases99_results}{{4.1}{4}{CASES-99 Nocturnal Dynamics and Collapse}{subsection.4.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Phase Manifold Geometry and Slow Convergence}{4}{subsection.4.2}\protected@file@percent }
+\newlabel{subsec:phase_manifold}{{4.2}{4}{Phase Manifold Geometry and Slow Convergence}{subsection.4.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces CASES-99 benchmark simulation over a 12-hour nocturnal cycle: (a) Fast state dynamics displaying desingularized TKE ($\tilde  {e}$) and vertical heat flux ($q_\theta $); (b) Thermal evolution of skin temperature ($T_s$) and deep soil temperature ($T_g$); (c) 3D phase-space trajectory $(\tilde  {e}, q_\theta , S)$ relative to the fast critical manifold $\mathcal  {M}_0$ and fold locus $\mathcal  {C}_{\text  {fold}}$; (d) Evolution of the 2D fast Jacobian determinant $\det (J_{\text  {fast}})$, illustrating the loss of Fenichel normal hyperbolicity prior to turbulence collapse.}}{5}{figure.1}\protected@file@percent }
+\newlabel{fig:cases99_manifold}{{1}{5}{CASES-99 benchmark simulation over a 12-hour nocturnal cycle: (a) Fast state dynamics displaying desingularized TKE ($\tilde {e}$) and vertical heat flux ($q_\theta $); (b) Thermal evolution of skin temperature ($T_s$) and deep soil temperature ($T_g$); (c) 3D phase-space trajectory $(\tilde {e}, q_\theta , S)$ relative to the fast critical manifold $\mathcal {M}_0$ and fold locus $\mathcal {C}_{\text {fold}}$; (d) Evolution of the 2D fast Jacobian determinant $\det (J_{\text {fast}})$, illustrating the loss of Fenichel normal hyperbolicity prior to turbulence collapse}{figure.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Fast subsystem phase-space trajectory projected onto $(\tilde  {e}, q_\theta )$ coordinates, demonstrating rapid fast-fiber relaxation toward the attractive critical manifold $\mathcal  {M}_0^+$ followed by slow evolutionary drift toward the non-hyperbolic fold boundary.}}{6}{figure.2}\protected@file@percent }
+\newlabel{fig:manifold}{{2}{6}{Fast subsystem phase-space trajectory projected onto $(\tilde {e}, q_\theta )$ coordinates, demonstrating rapid fast-fiber relaxation toward the attractive critical manifold $\mathcal {M}_0^+$ followed by slow evolutionary drift toward the non-hyperbolic fold boundary}{figure.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Reproducibility}{7}{section.5}\protected@file@percent }
 \citation{*}
+\bibstyle{unsrtnat}
 \bibdata{paper1}
-\bibcite{Fenichel1979}{Fenichel(1979)}
-\bibcite{Jones1995}{Jones(1995)}
-\bibcite{krupa2001extending}{Krupa and Szmolyan(2001)}
-\bibcite{Berglund2003}{Berglund and Gentz(2002)}
-\bibcite{Lorenz1986}{Lorenz(1986)}
-\bibcite{desroches2012canards}{Maesschalck and Desroches(2013)}
-\bibcite{Kuehn2015}{Kuehn(2015)}
-\bibcite{jelbart2022}{Jelbart and Kuehn(2022)}
-\bibcite{Kristiansen2024}{Kristiansen(2023)}
-\bibcite{McNider1981}{McNider and Pielke(1981)}
-\bibcite{MellorYamada1982}{Mellor and Yamada(1982)}
-\bibcite{nieuwstadt1984}{Nieuwstadt(1984)}
-\bibcite{England1995}{England and McNider(1995)}
-\bibcite{mcnider1995}{McNider et~al.(1995)McNider, England, Friedman, and Shi}
-\bibcite{shi2005}{Shi et~al.(2005)Shi, McNider, Singh, England, Friedman, Lapenta, and Norris}
-\bibcite{cuxart2006gabls1}{Cuxart et~al.(2004)Cuxart, Holtslag, Beare, Bazile, Beljaars, Cheng, Conangla, Ek, Freedman, Hamdi, et~al.}
-\bibcite{zilitinkevich2007}{Zilitinkevich et~al.(2006)Zilitinkevich, Elperin, Kleeorin, and Rogachevskii}
-\bibcite{basu2008}{Jiménez and Cuxart(2006)}
-\bibcite{VanDeWiel2012}{Wiel et~al.(2012)Wiel, Moene, Jonker, Baas, Basu, Donda, Sun, and Holtslag}
-\bibcite{Grachev2013}{Grachev et~al.(2013)Grachev, Andreas, et~al.}
-\bibcite{mahrt2014}{Mahrt(2014)}
-\bibcite{Monahan2015}{Monahan et~al.(2015)Monahan, Rees, He, and McFarlane}
-\bibcite{vanDeWiel2017}{Wiel et~al.(2017)Wiel, Vignon, Baas, Hooijdonk, Linden, Hooft, Bosveld, Roode, Moene, and Genthon}
-\bibcite{VanHooft2019}{Hooft et~al.(2019)Hooft, Baas, Tiggelen, Ansorge, and Wiel}
-\bibcite{Ramsey2022}{Ramsey and Monahan(2022)}
-\bibcite{Shaw2022}{Shaw et~al.(2022)Shaw, Berg, Debnath, Deskos, Draxl, Ghate, Hasager, Kotamarthi, Mirocha, Muradyan, et~al.}
-\bibcite{He2025}{He and Li(2025)}
-\bibcite{acevedo2010systematic}{Acevedo and Mahrt(2010)}
-\bibcite{poulos2002cases99}{Poulos et~al.(2002)Poulos, Blumen, Fritts, Lundquist, Sun, Burns, Nappo, Banta, Newsom, Cuxart, et~al.}
-\bibcite{Grachev2005}{Grachev et~al.(2005)Grachev, Fairall, Persson, Andreas, and Guest}
-\bibcite{Vignon2017}{Vignon et~al.(2017)Vignon, Hourdin, Genthon, Gallee, Bazile, Lefebvre, Madeleine, and Wiel}
-\bibcite{Su2024}{Su et~al.(2024)Su, Lu, Yuan, Wang, He, and Xia}
-\bibcite{Zhang2024Taklimakan}{Zhang et~al.(2024)Zhang, Zhang, Cai, Song, and Zhang}
-\bibcite{HairerWanner1996}{Hairer and Wanner(2010)}
-\bibcite{krauskopf2007continuation}{Krauskopf et~al.(2007)Krauskopf, Osinga, and Galán-Vioque}
-\bibcite{Rackauckas2017DifferentialEquations}{Rackauckas and Nie(2017)}
-\bibcite{Steinebach2023Rodas5P}{Steinebach(2023)}
-\gdef \@abspage@last{9}
+\bibcite{poulos2002cases99}{{1}{2002}{{Poulos et~al.}}{{Poulos, Blumen, Fritts, Lundquist, Sun, Burns, Nappo, Banta, Newsom, Cuxart, et~al.}}}
+\bibcite{Steinebach2023Rodas5P}{{2}{2023}{{Steinebach}}{{}}}
+\bibcite{Fenichel1979}{{3}{1979}{{Fenichel}}{{}}}
+\bibcite{Jones1995}{{4}{1995}{{Jones}}{{}}}
+\bibcite{krupa2001extending}{{5}{2001}{{Krupa and Szmolyan}}{{}}}
+\bibcite{Berglund2003}{{6}{2003}{{Berglund and Gentz}}{{}}}
+\bibcite{Lorenz1986}{{7}{1986}{{Lorenz}}{{}}}
+\bibcite{desroches2012canards}{{8}{2013}{{De~Maesschalck and Desroches}}{{}}}
+\bibcite{Kuehn2015}{{9}{2015}{{Kuehn}}{{}}}
+\bibcite{jelbart2022}{{10}{2023}{{Jelbart and Kuehn}}{{}}}
+\bibcite{Kristiansen2024}{{11}{2023}{{Kristiansen}}{{}}}
+\bibcite{McNider1981}{{12}{1981}{{McNider and Pielke}}{{}}}
+\bibcite{MellorYamada1982}{{13}{1982}{{Mellor and Yamada}}{{}}}
+\bibcite{nieuwstadt1984}{{14}{1984}{{Nieuwstadt}}{{}}}
+\bibcite{England1995}{{15}{1995}{{England and McNider}}{{}}}
+\bibcite{mcnider1995}{{16}{1995}{{McNider et~al.}}{{McNider, England, Friedman, and Shi}}}
+\bibcite{shi2005}{{17}{2005}{{Shi et~al.}}{{Shi, McNider, Singh, England, Friedman, Lapenta, and Norris}}}
+\bibcite{cuxart2006gabls1}{{18}{2006}{{Cuxart et~al.}}{{Cuxart, Holtslag, Beare, Bazile, Beljaars, Cheng, Conangla, Ek, Freedman, Hamdi, et~al.}}}
+\bibcite{zilitinkevich2007}{{19}{2007}{{Zilitinkevich et~al.}}{{Zilitinkevich, Elperin, Kleeorin, and Rogachevskii}}}
+\bibcite{jimenez2008}{{20}{2008}{{Jim{\'e}nez and Cuxart}}{{}}}
+\bibcite{VanDeWiel2012}{{21}{2012}{{van~de Wiel et~al.}}{{van~de Wiel, Moene, Jonker, Baas, Basu, Donda, Sun, and Holtslag}}}
+\bibcite{Grachev2013}{{22}{2013}{{Grachev et~al.}}{{Grachev, Andreas, Fairall, Guest, and Persson}}}
+\bibcite{mahrt2014}{{23}{2014}{{Mahrt}}{{}}}
+\bibcite{Monahan2015}{{24}{2015}{{Monahan et~al.}}{{Monahan, Rees, He, and McFarlane}}}
+\bibcite{vanDeWiel2017}{{25}{2017}{{van~de Wiel et~al.}}{{van~de Wiel, Vignon, Baas, van Hooijdonk, van~der Linden, Hooft, Bosveld, de~Roode, Moene, and Genthon}}}
+\bibcite{VanHooft2019}{{26}{2019}{{van Hooft et~al.}}{{van Hooft, Baas, van Tiggelen, Ansorge, and van~de Wiel}}}
+\bibcite{Ramsey2022}{{27}{2022}{{Ramsey and Monahan}}{{}}}
+\bibcite{Shaw2022}{{28}{2022}{{Shaw et~al.}}{{Shaw, Berg, Debnath, Deskos, Draxl, Ghate, Hasager, Kotamarthi, Mirocha, Muradyan, et~al.}}}
+\bibcite{He2025}{{29}{2025}{{He and Li}}{{}}}
+\bibcite{acevedo2010systematic}{{30}{2010}{{Acevedo and Mahrt}}{{}}}
+\bibcite{Grachev2005}{{31}{2005}{{Grachev et~al.}}{{Grachev, Fairall, Persson, Andreas, and Guest}}}
+\bibcite{Vignon2017}{{32}{2017}{{Vignon et~al.}}{{Vignon, Hourdin, Genthon, Gall{\'e}e, Bazile, Lefebvre, Madeleine, and van~de Wiel}}}
+\bibcite{Su2024}{{33}{2024}{{Su et~al.}}{{Su, Lu, Yuan, Wang, He, and Xia}}}
+\bibcite{Zhang2024Taklimakan}{{34}{2024}{{Zhang et~al.}}{{Zhang, Zhang, Cai, Song, and Zhang}}}
+\bibcite{HairerWanner1996}{{35}{1996}{{Hairer and Wanner}}{{}}}
+\bibcite{krauskopf2007continuation}{{36}{2007}{{Krauskopf et~al.}}{{Krauskopf, Osinga, and Gal{\'a}n-Vioque}}}
+\bibcite{Rackauckas2017DifferentialEquations}{{37}{2017}{{Rackauckas and Nie}}{{}}}
+\gdef \@abspage@last{10}

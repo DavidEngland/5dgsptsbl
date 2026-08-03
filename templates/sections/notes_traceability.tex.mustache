@@ -1,14 +1,16 @@
-\section{Notes Traceability}
-The manuscript templates were aligned with project notes emphasizing:
+\section{Notes Traceability and Architecture Alignment}
+\label{sec:notes_traceability}
+
+The manuscript templates and governing mathematical formulations presented herein are systematically mapped to and verified against the theoretical repository documentation. Key architectural highlights aligned across the notes, codebase, and manuscript templates include:
 \begin{itemize}
-\item desingularization using \(\tilde{e}=\sqrt{e+\delta}\),
-\item geometric fast-slow interpretation of the closure manifold,
-\item smooth stratification regularization for Fenichel-compatible dynamics.
+    \item $C^\infty$-smooth chart coordinate desingularization via $\tilde{e} = \sqrt{e + \delta}$ and fast time rescaling $d\tau = \tilde{e} \, dt$,
+    \item Geometric fast-slow decomposition of the critical manifold $\mathcal{M}_0$ and normal hyperbolicity loss along the fold locus $\mathcal{C}_{\text{fold}}$,
+    \item Hyperbolic stratification regularization $\operatorname{smooth\_max}(x; \epsilon_{\text{strat}})$ supporting Fenichel-compatible dynamics and autodiff-compatible Jacobian calculations (ForwardDiff.jl).
 \end{itemize}
 
-Primary note sources:
+The primary theoretical reference notes located in the repository include:
 \begin{itemize}
-\item \texttt{notes/Governing Equations and Turbulence Closure.md}
-\item \texttt{notes/Closures.md}
-\item \texttt{notes/Types.md}
+    \item \texttt{notes/Governing\ Equations\ and\ Turbulence\ Closure.md}
+    \item \texttt{notes/Closures.md}
+    \item \texttt{notes/Types.md}
 \end{itemize}

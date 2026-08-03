@@ -6,17 +6,18 @@
 
 ## Overview
 
-`5DGSPTSBL.jl` models nocturnal stable boundary layer turbulence collapse using Fenichel's theory for fast-slow dynamical systems. The physical system suffers from an $e = 0$ turbulent kinetic energy (TKE) singularity, which this package resolves via coordinate desingularization $\tilde{e} = \sqrt{e + \delta}$ and fast time rescaling $d\tau = \tilde{e} \, dt$.
+`5DGSPTSBL.jl` models nocturnal stable boundary layer turbulence collapse using Fenichel theory for fast-slow dynamical systems. Physical SBL modeling frequently suffers from a singularity at $e = 0$ in the turbulent kinetic energy (TKE) flux equations. This package resolves the singularity via a $C^\infty$-smooth coordinate chart desingularization $\tilde{e} = \sqrt{e + \delta}$ and a fast time rescaling $d\tau = \tilde{e} \, dt$.
 
-The model represents a fully coupled 5D fast-slow system:
+The physical model represents a fully coupled 5D fast-slow dynamical system across three distinct time scales:
 
 * **Fast Subsystem ($\mathbf{x}_f = (\tilde{e}, q_\theta)^T$):** Desingularized TKE ($\tilde{e}$) and kinematic vertical heat flux ($q_\theta$).
 * **Slow Subsystem ($\mathbf{x}_s = (S, T_s)^T$):** Vertical wind shear ($S$) and surface skin temperature ($T_s$).
 * **Super-Slow Subsystem ($x_{ss} = T_g$):** Deep soil temperature ($T_g$).
 
-The dynamic stratification closure introduces dynamic boundary layer depth $h_{\text{sbl}}(\tilde{e}) = h_{\min} + L_e \tilde{e}$, capturing the physical feedback loop where weakening turbulence sharpens ground inversion without breaking $C^r$-smoothness or Fenichel normal hyperbolicity.
+The dynamic stratification closure incorporates an adaptive boundary layer height $h_{\text{sbl}}(\tilde{e}) = h_{\min} + L_e \tilde{e}$. This captures the physical feedback where weakening turbulence sharpens the ground inversion without breaking $C^r$-smoothness or Fenichel normal hyperbolicity.
 
-> **Note on Naming Convention:** While the repository and package are named `5DGSPTSBL`, Julia module identifiers cannot start with a digit. Therefore, the module is imported in code as `FiveDGSPTSBL`.
+> **Important — Julia Module Naming Convention**
+> Because Julia syntax prohibits module identifiers from starting with a numerical digit, the package module is named and imported in Julia code as **`FiveDGSPTSBL`**, whereas the GitHub repository and package entry maintain the official project name **`5DGSPTSBL`**.
 
 ---
 
@@ -24,27 +25,23 @@ The dynamic stratification closure introduces dynamic boundary layer depth $h_{\
 
 ### 1. Fast Subsystem Dynamics
 
-On fast time scale $\tau$, with slow background variables held constant:
+On the fast time scale $\tau$, holding slow background variables constant:
 
 $$\begin{aligned} \frac{d\tilde{e}}{d\tau} &= \frac{1}{2} c_m \ell(z_{\text{eff}}) S^2 \tilde{e} - \frac{g}{2\theta_0} q_\theta - \frac{1}{2\ell(z_{\text{eff}})} \tilde{e}^3 \\ \frac{dq_\theta}{d\tau} &= - c_w \theta_z(T_s, \tilde{e}) \tilde{e}^3 - \frac{g}{\theta_0} c_\theta \ell(z_{\text{eff}}) q_\theta^2 - \frac{C_\theta}{\ell(z_{\text{eff}})} \tilde{e}^2 q_\theta \end{aligned}$$
 
-### 2. Dynamic Stratification & Thermodynamics
+### 2. Dynamic Stratification Closure
 
 $$\theta_z(T_s, \tilde{e}) = \max\left(0, \, \frac{T_0 - T_s}{h_{\min} + L_e \tilde{e}}\right)$$
 
 ### 3. Slow & Super-Slow Evolution
 
-$$\frac{dS}{d\tau} = \frac{\epsilon_1}{\max(\tilde{e}, \sqrt{\delta})} \left[ F_{\text{ls}} - \frac{\rho C_d U_1^2}{\rho_0 \Delta z^2} \right]$$
-
-$$\frac{dT_s}{d\tau} = \frac{\epsilon_1}{\max(\tilde{e}, \sqrt{\delta})} \frac{1}{C_s} \left[ R_{\text{net}}(T_s) + \rho c_p q_\theta + \frac{k_g}{d_g}(T_g - T_s) \right]$$
-
-$$\frac{dT_g}{d\tau} = \frac{\epsilon_1 \epsilon_2}{\max(\tilde{e}, \sqrt{\delta})} \frac{\kappa_g}{d_g^2} (T_s - T_g)$$
+$$\begin{aligned} \frac{dS}{d\tau} &= \frac{\epsilon_1}{\max(\tilde{e}, \sqrt{\delta})} \left[ F_{\text{ls}} - \frac{\rho C_d U_1^2}{\rho_0 \Delta z^2} \right] \\ \frac{dT_s}{d\tau} &= \frac{\epsilon_1}{\max(\tilde{e}, \sqrt{\delta})} \frac{1}{C_s} \left[ R_{\text{net}}(T_s) + \rho c_p q_\theta + \frac{k_g}{d_g}(T_g - T_s) \right] \\ \frac{dT_g}{d\tau} &= \frac{\epsilon_1 \epsilon_2}{\max(\tilde{e}, \sqrt{\delta})} \frac{\kappa_g}{d_g^2} (T_s - T_g) \end{aligned}$$
 
 ### 4. Critical Manifold & Fold Locus
 
-The critical manifold $\mathcal{M}_0$ consists of fast equilibrium states where $\dot{\tilde{e}} = 0$ and $\dot{q}_\theta = 0$. The fold catastrophe boundary $\mathcal{C}_{\text{fold}}$ marks the loss of normal hyperbolicity:
+The critical manifold $\mathcal{M}_0$ consists of equilibrium states of the fast subsystem where $\dot{\tilde{e}} = 0$ and $\dot{q}_\theta = 0$. The fold catastrophe boundary $\mathcal{C}_{\text{fold}}$ marks the failure of normal hyperbolicity:
 
-$$\det(J_{\text{fast}}) = \det \begin{pmatrix}  \frac{\partial \dot{\tilde{e}}}{\partial \tilde{e}} & \frac{\partial \dot{\tilde{e}}}{\partial q_\theta} \\ \frac{\partial \dot{q}_\theta}{\partial \tilde{e}} & \frac{\partial \dot{q}_\theta}{\partial q_\theta}  \end{pmatrix} = 0$$
+$$\det(J_{\text{fast}}) = \det \begin{pmatrix} \frac{\partial \dot{\tilde{e}}}{\partial \tilde{e}} & \frac{\partial \dot{\tilde{e}}}{\partial q_\theta} \\ \frac{\partial \dot{q}_\theta}{\partial \tilde{e}} & \frac{\partial \dot{q}_\theta}{\partial q_\theta} \end{pmatrix} = 0$$
 
 ---
 
@@ -54,23 +51,28 @@ $$\det(J_{\text{fast}}) = \det \begin{pmatrix}  \frac{\partial \dot{\tilde{e}}}{
 5DGSPTSBL/
 ├── Project.toml               # Package dependencies and version bounds
 ├── src/
-│   ├── 5DGSPTSBL.jl           # Main module entrypoint (exports FiveDGSPTSBL)
+│   ├── 5DGSPTSBL.jl           # Module entrypoint (defines FiveDGSPTSBL)
 │   ├── types.jl               # SBLParams struct parameterized for Autodiff
 │   ├── physics/
 │   │   ├── closures.jl        # Physical closures (z_eff, l, h_sbl, theta_z)
-│   │   └── rhs.jl             # 5D desingularized system & 2D fast subsystem
+│   │   ├── rhs.jl             # 5D desingularized system & 2D fast subsystem
+│   │   └── scm.jl             # Multi-layer Single-Column Model (SCM) PDE extension
 │   ├── analysis/
-│   │   └── jacobian.jl        # ForwardDiff fast Jacobian, det(J), fold tracking
+│   │   ├── jacobian.jl        # Fast Jacobian, det(J), fold locus tracking
+│   │   └── bifurcations.jl   # Cusp / BT point tracking & hysteresis metrics
 │   └── wsindy/
 │       └── identification.jl  # DataDrivenDiffEq WSINDy parameter identification
 ├── test/
 │   ├── runtests.jl            # Master test suite runner
-│   ├── test_closures.jl       # K_m positivity and Autodiff checks
-│   ├── test_jacobian.jl       # Fast Jacobian sign-change and delta sensitivity
+│   ├── test_closures.jl       # Positivity, stratification, and Autodiff checks
+│   ├── test_jacobian.jl       # Fast Jacobian sign-change checks
+│   ├── test_bifurcations.jl   # Codim-2 point detection tests
+│   ├── test_delta_sensitivity.jl # Delta regularization invariance checks
+│   ├── test_scm.jl            # SCM grid and tendency checks
 │   └── test_ode.jl            # Stiff 5D ODE solver verification
 └── scripts/
-    ├── run_cases99.jl         # CASES-99 12-hour simulation driver
-    └── plot_manifold.jl       # CairoMakie manifold visualizer
+    ├── run_cases99.jl         # CASES-99 simulation driver
+    └── plot_manifold.jl       # CairoMakie phase-space visualizer
 
 ```
 
@@ -97,30 +99,31 @@ julia --project=. -e 'using Pkg; Pkg.instantiate()'
 using DifferentialEquations
 using FiveDGSPTSBL
 
-# Initialize physical parameters and initial state
+# Initialize physical parameters and state vector
 p = SBLParams()
-u0 = [0.5, -0.01, 0.05, 285.0, 288.0] # [e_tilde, q_theta, S, Ts, Tg]
-tspan = (0.0, 43200.0)                # 12-hour nocturnal cycle
+u0 = [0.5, -0.01, 0.05, 285.0, 288.0]  # [e_tilde, q_theta, S, Ts, Tg]
+tspan = (0.0, 43200.0)                 # 12-hour nocturnal integration
 
-# Solve using stiff solver Rodas5P
+# Solve using stiff adaptive solver Rodas5P
 prob = ODEProblem(gspt_5d_rhs!, u0, tspan, p)
-sol = solve(prob, Rodas5P(), reltol=1e-8, abstol=1e-8)
+sol = solve(prob, Rodas5P(); reltol=1e-8, abstol=1e-8, dtmin=1e-12)
 
 ```
 
 ### 2. Evaluating Fast Jacobian and Fold Locus
 
 ```julia
+using StaticArrays
 using FiveDGSPTSBL
 
 p = SBLParams()
-u_fast = [0.2, -0.005]  # [e_tilde, q_theta]
-u_slow = [0.03, 280.0]  # [S, Ts]
+u_fast = SVector(0.2, -0.005)  # [e_tilde, q_theta]
+u_slow = SVector(0.03, 280.0)  # [S, Ts]
 
 # Compute 2x2 fast Jacobian matrix via ForwardDiff
 J = fast_jacobian(u_fast, u_slow, p)
 
-# Evaluate determinant (sign determines stability)
+# Evaluate determinant (sign determines normal hyperbolicity)
 det_J = jacobian_determinant(u_fast, u_slow, p)
 
 ```
@@ -130,7 +133,7 @@ det_J = jacobian_determinant(u_fast, u_slow, p)
 ```julia
 using FiveDGSPTSBL
 
-# Extract trajectories from simulation or observational data
+# Extract state trajectories from observational tower data or DNS
 tau, e_tilde, q_theta, S, Ts = extract_trajectories(sol)
 
 # Recover dimensionless closure parameters (c_m, c_w, c_theta, C_theta)
@@ -142,10 +145,10 @@ recovered_params = identify_gspt_closures(tau, e_tilde, q_theta, S, Ts, p; lambd
 
 ## Running Tests
 
-Execute the test suite without precompilation overhead:
+Execute the full suite across closures, bifurcations, delta-sensitivity, and SCM integration:
 
 ```bash
-JULIA_PKG_PRECOMPILE_AUTO=0 julia --project=. --compiled-modules=no test/runtests.jl
+julia --project=. test/runtests.jl
 
 ```
 
@@ -154,3 +157,11 @@ JULIA_PKG_PRECOMPILE_AUTO=0 julia --project=. --compiled-modules=no test/runtest
 ## License
 
 This project is licensed under the MIT License. See `LICENSE` for details.
+
+---
+
+### Key Improvements Made:
+
+1. **Module Name Callout:** Placed an explicit, styled callout box near the top explaining the `5DGSPTSBL` vs `FiveDGSPTSBL` identifier requirement so users understand imports right away.
+2. **Mathematical Notation:** Cleaned up multi-line system alignments using `\begin{aligned}` and ensured consistent subscripting and variable names matching your latest codebase implementations.
+3. **Updated Repository Tree & Quickstart:** Incorporated newly added files (`scm.jl`, `bifurcations.jl`, `test_delta_sensitivity.jl`, `test_scm.jl`) and added `dtmin=1e-12` to the `solve` call in the quickstart example to prevent step-size warning artifacts.
