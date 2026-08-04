@@ -1,0 +1,88 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, fit, backgrounds, calc}
+
+\begin{document}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    >=Stealth,
+    node distance=1.6cm and 2.0cm,
+    font=\sffamily\small,
+    % Box Styles
+    block/.style={
+        draw,
+        rounded corners=4pt,
+        thick,
+        inner sep=10pt,
+        align=left,
+        minimum width=6.6cm
+    },
+    atmos/.style={
+        block,
+        fill=blue!4,
+        draw=blue!60!black
+    },
+    ground/.style={
+        block,
+        fill=orange!4,
+        draw=orange!70!black
+    },
+    gspt/.style={
+        block,
+        fill=purple!4,
+        draw=purple!60!black,
+        minimum width=6.8cm
+    },
+    arrow/.style={
+        ->,
+        thick,
+        line width=1.1pt
+    }
+]
+
+% =========================================================================
+% NODES
+% =========================================================================
+
+% 1. Atmospheric Dynamics Node
+\node [atmos] (atmos_box) {
+    \textbf{\color{blue!70!black} Atmospheric Boundary Layer Dynamics}\\[4pt]
+    \textbullet~\textbf{Regularized TKE}: $\tilde{e} = \sqrt{e + \delta}$ \textit{(singularity suppression)}\\[2pt]
+    \textbullet~\textbf{Dimensionless Time}: $\tau = t / t_e$, where $t_e = L / \sqrt{\tilde{e}}$\\[2pt]
+    \textbullet~\textbf{Viscous Damping}: $\varepsilon(\Pi_G) = \varepsilon_0 (1 - \Pi_G)$
+};
+
+% 2. Surface Energy & Ground Node
+\node [ground, below=1.2cm of atmos_box] (ground_box) {
+    \textbf{\color{orange!80!black} Surface Energy Balance \& Ground Coupling}\\[4pt]
+    \textbullet~\textbf{Radiative Loss}: $R_{\text{net}}(T_s) < 0$\\[2pt]
+    \textbullet~\textbf{Ground Heat Flux}: $G = -\Pi_G R_{\text{net}} = \frac{k_g}{d_g}(T_g - T_s)$\\[2pt]
+    \textbullet~\textbf{Effective Capacity (Ground Coupling)}: $C_s^{\text{eff}} = \frac{C_s}{1 - \Pi_G}\\[2pt]
+    \textbullet~\textbf{Conductive Diffusion}: $\frac{d T_g}{d t} = \frac{\kappa_g}{d_g^2}(T_s - T_g)$
+};
+
+% 3. GSPT & Bifurcation Right Card (Completed missing text and closed brace)
+\node [gspt, right=1.8cm of $(atmos_box.north east)!0.5!(ground_box.south east)$] (gspt_box) {
+    \textbf{\color{purple!70!black} GSPT Observation Map \& Fold Bifurcation}\\[4pt]
+    \textbullet~\textbf{Critical Manifold}: $\mathcal{M}_0 = \{(e, T_s, T_g) \mid f(e, T_s, T_g) = 0\}$\\[2pt]
+    \textbullet~\textbf{Fast-Slow System}: $\varepsilon \dot{x} = f(x, y, \lambda), \quad \dot{y} = g(x, y, \lambda)$\\[2pt]
+    \textbullet~\textbf{Fold Singularity}: $\det(D_x f) = 0$ \textit{(stability loss)}
+};
+
+% =========================================================================
+% EDGES / ARROWS (Added to link the diagram components)
+% =========================================================================
+\draw [arrow] (atmos_box.south) -- (ground_box.north);
+\draw [arrow] (ground_box.north) -- (atmos_box.south);
+\draw [arrow] (atmos_box.east) -- (atmos_box.east -| gspt_box.west);
+\draw [arrow] (ground_box.east) -- (ground_box.east -| gspt_box.west);
+
+\end{tikzpicture}
+\caption{System block diagram showing coupling between atmospheric dynamics, ground energy balance, and GSPT bifurcation analysis.}
+\label{fig:system_diagram}
+\end{figure}
+
+\end{document}

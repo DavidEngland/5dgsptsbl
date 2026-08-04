@@ -11,12 +11,14 @@
 \usepackage[numbers,sort&compress]{natbib}
 \usepackage{hyperref}
 \geometry{margin=1in}
-
+\usepackage{lscape}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, fit, backgrounds, calc}
 \newtheorem{proposition}{Proposition}
 
 \csname title\endcsname{5DGSPTSBL: Geometric Fast-Slow Stable Boundary Layer Model}
-\author{5DGSPTSBL Contributors}
-\date{2026-08-03}
+\author{David E. England, PhD and 5DGSPTSBL Contributors}
+\date{2026-08-04}
 
 \begin{document}
 \maketitle
@@ -42,6 +44,9 @@ while collapse dynamics are governed by a folded fast manifold with invariant fo
 \dim\!\bigl(T_p\mathcal{C}_{\mathrm{fold}}\cap\ker D\pi_{Ri}(p)\bigr)\ge 2,
 \end{equation}
 so scalar $Ri$ level sets intersect the folded set along fibers rather than isolated states.
+\begin{landscape}
+\includegraphics[width=\linewidth]{figures/fig0_tikz.pdf}
+\end{landscape}
 
 Consequently, critical Richardson thresholds are state-dependent manifold projections, not universal material constants. This perspective resolves the classical universality tension while remaining directly testable through fold diagnostics, fast Jacobian signatures, and campaign-specific trajectories on common nondimensional manifolds.
 

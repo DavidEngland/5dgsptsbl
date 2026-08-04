@@ -91,7 +91,11 @@ end
 function run_latexmk(outdir::String)
     tex_path = joinpath(outdir, "paper.tex")
     cmd = `latexmk -pdf -outdir=$outdir $tex_path`
-    run(cmd)
+    if !success(cmd)
+        @warn "latexmk initial pass failed; retrying with -g to clear stale dependency/error state" tex_path
+        retry_cmd = `latexmk -pdf -g -outdir=$outdir $tex_path`
+        run(retry_cmd)
+    end
 end
 
 function summarize_build_diagnostics(outdir::String)
@@ -128,7 +132,7 @@ function main()
 
     context = Dict{String,String}(
         "title_tex" => "{5DGSPTSBL: Geometric Fast-Slow Stable Boundary Layer Model}",
-        "author_tex" => "{5DGSPTSBL Contributors}",
+        "author_tex" => "{David E. England, PhD and 5DGSPTSBL Contributors}",
         "date_tex" => "{" * string(Dates.today()) * "}",
     )
 

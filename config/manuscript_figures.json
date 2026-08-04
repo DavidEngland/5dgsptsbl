@@ -1,0 +1,23 @@
+{
+  "preferred_stems": [
+    "fig0_tikz"
+  ],
+  "acronyms": {
+    "4d": "4D",
+    "sbl": "SBL",
+    "tke": "TKE",
+    "gspt": "GSPT",
+    "nwp": "NWP",
+    "ug": "$U_g$",
+    "z0m": "$z_{0m}$"
+  },
+  "figure_mappings": {},
+  "scm_figures": {},
+  "figures": {
+    "fig0_tikz": {
+      "caption": "A schematic of the 5D GSPT framework for modeling stable boundary layer (SBL) turbulence collapse and WSINDy parameter discovery.",
+      "label": "fig:5dgspt_schematic",
+      "path": "figures/fig0_tikz.pdf"
+    }
+  }
+}

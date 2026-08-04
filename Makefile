@@ -18,10 +18,11 @@ manifold:
 
 figures: cases99 manifold
 
-assemble-manuscript: figures
+assemble-manuscript:
 	mkdir -p reports/generated/figures
 	@if [ -d paper/figures ]; then cp -r paper/figures/* reports/generated/figures/ 2>/dev/null || true; fi
 	@if [ -f notes/manuscript/paper1.bib ]; then cp notes/manuscript/paper1.bib reports/generated/ 2>/dev/null || true; fi
+	@if [ -d templates/figures ]; then cp -r templates/figures/*.pdf reports/generated/figures 2>/dev/null || true; fi
 	julia --project=. scripts/assemble_manuscript.jl
 
 bibtex-paper:
