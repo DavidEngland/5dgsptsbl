@@ -1,23 +1,25 @@
 \section{Governing Equations}
 \label{sec:governing_equations}
 
-\paragraph{Proposition 1 (Regularized Fast System and Orbit Equivalence).}
+\begin{proposition}[Regularized Fast System and Orbit Equivalence]
 Let $\mathcal{D} = \{ (e, q_\theta, S, T_s, T_g) \in \mathbb{R}^5 \mid e > 0 \}$ denote the physical phase space, and define
 \begin{equation}
 \Phi_\delta(e, q_\theta, S, T_s, T_g)
 = \left( \sqrt{e + \delta}, \, q_\theta, \, S, \, T_s, \, T_g \right)^T,
 \end{equation}
-with $\delta > 0$.
-Then:
+with $\delta > 0$. Then:
 \begin{enumerate}
 \item $\Phi_\delta$ is a $C^\infty$ diffeomorphism from $\mathcal{D}$ onto $\mathcal{D}_\delta = (\sqrt{\delta}, \infty) \times \mathbb{R}^4$.
 \item $d\tau = \tilde{e} \, dt$ is a strictly positive $C^\infty$ state-dependent time rescaling on $\mathcal{D}_\delta$.
 \item The desingularized fast-time vector field preserves equilibrium sets, trajectory orientation, and Fenichel normal hyperbolicity class under orbit-equivalent time reparametrization.
 \end{enumerate}
-	extit{Proof.}
+\end{proposition}
+
+\begin{proof}
 Smoothness follows from $\tilde{e}(e)=\sqrt{e+\delta}$ and inverse map $e=\tilde{e}^2-\delta$ on $\tilde{e}>\sqrt{\delta}$.
 Since $\tilde{e}\ge\sqrt{\delta}>0$, the time-scale factor is strictly positive; therefore trajectories in $t$ and $\tau$ share identical geometric orbits with preserved orientation, differing only by parametrization.
-This implies the invariant fast-slow geometric structure is preserved under the chart. $\square$
+This implies the invariant fast-slow geometric structure is preserved under the chart.
+\end{proof}
 
 The desingularized 5D fast-slow dynamical system governing the nocturnal stable boundary layer on the fast time scale $\tau$ is given by
 \begin{align}
@@ -27,6 +29,16 @@ The desingularized 5D fast-slow dynamical system governing the nocturnal stable 
 \frac{dT_s}{d\tau} &= \frac{\epsilon_1}{\max\left(\tilde{e},\sqrt{\delta}\right)}\frac{1}{C_s}\left(R_{\text{net}}(T_s) + \rho c_p q_\theta + \frac{k_g}{d_g}(T_g-T_s)\right), \label{eq:slow_Ts}\\
 \frac{dT_g}{d\tau} &= \frac{\epsilon_1\epsilon_2}{\max\left(\tilde{e},\sqrt{\delta}\right)}\frac{\kappa_g}{d_g^2}(T_s-T_g). \label{eq:superslow_Tg}
 \end{align}
+
+\paragraph{Synoptic Shear Forcing $\mathcal{F}_S$.}
+The slow momentum forcing function $\mathcal{F}_S$ in \eqref{eq:slow_S} represents the synoptic and mesoscale driving of vertical wind shear $S = \partial U / \partial z$ against turbulent momentum depletion. In the GSPT framework, $\mathcal{F}_S$ is closed via a relaxational geostrophic driving law:
+\begin{equation}
+\mathcal{F}_S(S) = \gamma_S \left( S_{\text{geo}} - S \right),
+\label{eq:shear_forcing_closure}
+\end{equation}
+where $S_{\text{geo}} = \frac{g}{f_0 T_0} \left| \nabla_h T \right|$ is the background geostrophic shear maintained by horizontal thermal advection or low-level jet (LLJ) inertial oscillations, and $\gamma_S \sim \mathcal{O}(10^{-4}\,\mathrm{s}^{-1})$ is the slow momentum relaxation rate.
+
+Under unforced or baseline nocturnal conditions, $\mathcal{F}_S$ can be approximated as a constant linear shear production rate $\mathcal{F}_S \approx \gamma_S S_{\text{geo}}$. Geometrically, $\mathcal{F}_S > 0$ acts as the principal slow parameter driving state trajectories along the attracting slow manifold $\mathcal{M}_\varepsilon^+$ toward the non-hyperbolic fold boundary $\mathcal{C}_{\text{fold}}$, where normal hyperbolicity collapses and turbulence suppression occurs.
 
 \begin{quote}
 \small
@@ -45,7 +57,7 @@ To verify that $\delta$ is a topological regularization parameter (not a fitted 
 \centering
 \caption{$\delta$-invariance diagnostics for fold geometry and local fast dynamics.}
 \begin{tabular}{lcccc}
-	oprule
+\toprule
 $\delta$ & $\tilde{e}_{\text{fold}}$ & $\lambda_1(\mathcal{C}_{\text{fold}})$ & $\det(M)$ & $S_{\text{fold}}\,(\mathrm{s}^{-1})$ \\
 \midrule
 $10^{-6}$ & 0.141208 & $-1.24 \times 10^{-8}$ & $1.4281 \times 10^{-3}$ & 0.01821 \\

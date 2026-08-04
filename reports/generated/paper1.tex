@@ -2,8 +2,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
-\usepackage{amsmath,amssymb,mathtools}
-\usepackage{amsthm}
+\usepackage{amsmath,amssymb,mathtools,amsthm}
 \usepackage{booktabs}
 \usepackage{graphicx}
 \graphicspath{{figures/}{../../paper/figures/}}
@@ -12,9 +11,10 @@
 \usepackage{hyperref}
 \geometry{margin=1in}
 
+% Theorem environments
 \newtheorem{proposition}{Proposition}
 
-\csname title\endcsname{5DGSPTSBL: Geometric Fast-Slow Stable Boundary Layer Model}
+\title{5DGSPTSBL: Geometric Fast-Slow Stable Boundary Layer Model}
 \author{5DGSPTSBL Contributors}
 \date{2026-08-03}
 
@@ -23,7 +23,7 @@
 
 % --- Begin Section: templates/sections/abstract.tex.mustache ---
 \begin{abstract}
-We present a five-dimensional Geometric Singular Perturbation Theory (GSPT) framework for the atmospheric stable boundary layer (SBL) with state vector $\mathbf{x} = (\tilde{e}, q_\theta, S, T_s, T_g)^T$. By introducing a $C^\infty$-smooth chart desingularization ($\tilde{e} = \sqrt{e + \delta}$), we resolve the non-smooth turbulent kinetic energy singularity at $e = 0$, enabling formal application of Fenichel theory across fast, slow, and super-slow time scales. The model resolves the longstanding "Richardson threshold paradox" by demonstrating that observed campaign-dependent critical Richardson numbers ($Ri_{\text{crit}}$) are rank-1 geometric projections of an invariant 2D fold locus ($\mathcal{C}_{\text{fold}}$) rather than static fluid constants. The framework naturally accounts for pre-collapse "turbulence whispering" via canard funnels, tracks co-dimension 2 singularities (Cusp and Bogdanov-Takens), and supports data-driven parameter discovery using Weak SINDy (WSINDy).
+We present a five-dimensional Geometric Singular Perturbation Theory (GSPT) framework for the atmospheric stable boundary layer (SBL) with state vector $\mathbf{x} = (\tilde{e}, q_\theta, S, T_s, T_g)^T$. By introducing a $C^\infty$-smooth chart desingularization ($\tilde{e} = \sqrt{e + \delta}$), we resolve the non-smooth turbulent kinetic energy singularity at $e = 0$, enabling formal application of Fenichel theory across fast, slow, and super-slow time scales. The model resolves the longstanding ``Richardson threshold paradox'' by demonstrating that observed campaign-dependent critical Richardson numbers ($Ri_{\text{crit}}$) are rank-1 geometric projections of an invariant 2D fold locus ($\mathcal{C}_{\text{fold}}$) rather than static fluid constants. The framework naturally accounts for pre-collapse ``turbulence whispering'' via canard funnels, tracks co-dimension 2 singularities (Cusp and Bogdanov-Takens), and supports data-driven parameter discovery using Weak SINDy (WSINDy).
 \end{abstract}
 % --- End Section: templates/sections/abstract.tex.mustache ---
 
@@ -33,18 +33,17 @@ We present a five-dimensional Geometric Singular Perturbation Theory (GSPT) fram
 
 Observational field campaigns over the past three decades, from CASES-99 over grassland terrain to SHEBA over Arctic pack ice, have reported broad spread in collapse thresholds, with $0.2 \lesssim Ri_{\text{crit}} \lesssim 1.0$. This dispersion has often been attributed to unresolved gravity waves, spatial heterogeneity, or instrumentation noise.
 
-This work reframes the non-universality of $Ri_{\text{crit}}$ as a geometric consequence of state-space projection. In the five-dimensional GSPT formulation, scalar Richardson number is a rank-1 observable
+This work reframes the non-universality of $Ri_{\text{crit}}$ as a geometric consequence of state-space projection. In the five-dimensional GSPT formulation, the scalar Richardson number is a rank-1 observable
 \begin{equation}
-\pi_{Ri}(\tilde{e}, q_\theta, S, T_s, T_g)=\frac{g\,\theta_z(T_s,\tilde{e})}{\theta_0 S^2},
+\pi_{Ri}(\tilde{e}, q_\theta, S, T_s, T_g) = \frac{g\,\theta_z(T_s,\tilde{e})}{\theta_0 S^2},
 \end{equation}
 while collapse dynamics are governed by a folded fast manifold with invariant fold set $\mathcal{C}_{\mathrm{fold}}$. At any regular fold point $p$,
 \begin{equation}
-\dim\!\bigl(T_p\mathcal{C}_{\mathrm{fold}}\cap\ker D\pi_{Ri}(p)\bigr)\ge 2,
+\dim\!\bigl(T_p\mathcal{C}_{\mathrm{fold}}\cap\ker D\pi_{Ri}(p)\bigr) \ge 2,
 \end{equation}
 so scalar $Ri$ level sets intersect the folded set along fibers rather than isolated states.
 
 Consequently, critical Richardson thresholds are state-dependent manifold projections, not universal material constants. This perspective resolves the classical universality tension while remaining directly testable through fold diagnostics, fast Jacobian signatures, and campaign-specific trajectories on common nondimensional manifolds.
-
 % --- End Section: templates/sections/introduction.tex.mustache ---
 
 % --- Begin Section: templates/sections/governing_equations.tex.mustache ---
@@ -52,10 +51,10 @@ Consequently, critical Richardson thresholds are state-dependent manifold projec
 \label{sec:governing_equations}
 
 \begin{proposition}[Regularized Fast System and Orbit Equivalence]
+\label{prop:regularized_fast_system}
 Let $\mathcal{D} = \{ (e, q_\theta, S, T_s, T_g) \in \mathbb{R}^5 \mid e > 0 \}$ denote the physical phase space, and define
 \begin{equation}
-\Phi_\delta(e, q_\theta, S, T_s, T_g)
-= \left( \sqrt{e + \delta}, \, q_\theta, \, S, \, T_s, \, T_g \right)^T,
+\Phi_\delta(e, q_\theta, S, T_s, T_g) = \left( \sqrt{e + \delta}, \, q_\theta, \, S, \, T_s, \, T_g \right)^T,
 \end{equation}
 with $\delta > 0$. Then:
 \begin{enumerate}
@@ -66,9 +65,9 @@ with $\delta > 0$. Then:
 \end{proposition}
 
 \begin{proof}
-Smoothness follows from $\tilde{e}(e)=\sqrt{e+\delta}$ and inverse map $e=\tilde{e}^2-\delta$ on $\tilde{e}>\sqrt{\delta}$.
+Smoothness follows from $\tilde{e}(e)=\sqrt{e+\delta}$ and the inverse map $e=\tilde{e}^2-\delta$ on $\tilde{e}>\sqrt{\delta}$.
 Since $\tilde{e}\ge\sqrt{\delta}>0$, the time-scale factor is strictly positive; therefore trajectories in $t$ and $\tau$ share identical geometric orbits with preserved orientation, differing only by parametrization.
-This implies the invariant fast-slow geometric structure is preserved under the chart.
+This implies the invariant fast-slow geometric structure is preserved under the chart transformation.
 \end{proof}
 
 The desingularized 5D fast-slow dynamical system governing the nocturnal stable boundary layer on the fast time scale $\tau$ is given by
@@ -79,16 +78,6 @@ The desingularized 5D fast-slow dynamical system governing the nocturnal stable 
 \frac{dT_s}{d\tau} &= \frac{\epsilon_1}{\max\left(\tilde{e},\sqrt{\delta}\right)}\frac{1}{C_s}\left(R_{\text{net}}(T_s) + \rho c_p q_\theta + \frac{k_g}{d_g}(T_g-T_s)\right), \label{eq:slow_Ts}\\
 \frac{dT_g}{d\tau} &= \frac{\epsilon_1\epsilon_2}{\max\left(\tilde{e},\sqrt{\delta}\right)}\frac{\kappa_g}{d_g^2}(T_s-T_g). \label{eq:superslow_Tg}
 \end{align}
-
-\paragraph{Synoptic Shear Forcing $\mathcal{F}_S$.}
-The slow momentum forcing function $\mathcal{F}_S$ in \eqref{eq:slow_S} represents the synoptic and mesoscale driving of vertical wind shear $S = \partial U / \partial z$ against turbulent momentum depletion. In the GSPT framework, $\mathcal{F}_S$ is closed via a relaxational geostrophic driving law:
-\begin{equation}
-\mathcal{F}_S(S) = \gamma_S \left( S_{\text{geo}} - S \right),
-\label{eq:shear_forcing_closure}
-\end{equation}
-where $S_{\text{geo}} = \frac{g}{f_0 T_0} \left| \nabla_h T \right|$ is the background geostrophic shear maintained by horizontal thermal advection or low-level jet (LLJ) inertial oscillations, and $\gamma_S \sim \mathcal{O}(10^{-4}\,\mathrm{s}^{-1})$ is the slow momentum relaxation rate.
-
-Under unforced or baseline nocturnal conditions, $\mathcal{F}_S$ can be approximated as a constant linear shear production rate $\mathcal{F}_S \approx \gamma_S S_{\text{geo}}$. Geometrically, $\mathcal{F}_S > 0$ acts as the principal slow parameter driving state trajectories along the attracting slow manifold $\mathcal{M}_\varepsilon^+$ toward the non-hyperbolic fold boundary $\mathcal{C}_{\text{fold}}$, where normal hyperbolicity collapses and turbulence suppression occurs.
 
 \begin{quote}
 \small
@@ -103,9 +92,10 @@ Evaluating the remainder near the laminar boundary $\tilde{e} = \sqrt{\delta}$ y
 For representative manuscript parameters ($\delta = 10^{-5}$ and $\ell = 10\,\mathrm{m}$), equation \eqref{eq:dissipation_error_bound} gives $\max \lvert \mathcal{R}_\delta \rvert \le 2.37 \times 10^{-9}\,\mathrm{m\,s^{-2}}$, which is well below $10^{-5}\%$ of the active dissipation magnitude at $\tilde{e} = 0.2$. Thus, the cubic normal form preserves the physical dissipation scale to manuscript precision.
 
 To verify that $\delta$ is a topological regularization parameter (not a fitted physical constant), we evaluate fold diagnostics across two orders of magnitude in $\delta$:
-\begin{table}[h]
+\begin{table}[htbp]
 \centering
 \caption{$\delta$-invariance diagnostics for fold geometry and local fast dynamics.}
+\label{tab:delta_invariance}
 \begin{tabular}{lcccc}
 \toprule
 $\delta$ & $\tilde{e}_{\text{fold}}$ & $\lambda_1(\mathcal{C}_{\text{fold}})$ & $\det(M)$ & $S_{\text{fold}}\,(\mathrm{s}^{-1})$ \\
@@ -162,7 +152,14 @@ closes the collapse feedback loop
 \end{equation}
 which accelerates approach to the fold boundary during nocturnal collapse.
 
-The interior dissipation/production scale is set by \eqref{eq:blackadar_length} while neutral bulk drag/heat exchange coefficients $C_D$ and $C_H$ act only as lower-boundary transfer closures at $z_1$. This separates boundary drag physics from interior turbulent mixing geometry.
+The interior dissipation/production scale is set by
+\begin{equation}
+\ell(z_{\text{eff}})=\frac{\kappa z_{\text{eff}}}{1+\kappa z_{\text{eff}}/\ell_\infty},
+\qquad
+z_{\text{eff}}=z-d+z_{0m},
+\label{eq:zeff_blackadar}
+\end{equation}
+while neutral bulk drag/heat exchange coefficients $C_D$ and $C_H$ act only as lower-boundary transfer closures at $z_1$. This separates boundary drag physics from interior turbulent mixing geometry.
 
 \subsection{Transcritical Ignition and Surface-Energy Closure}
 \label{subsec:ignition_and_flux}
@@ -218,6 +215,7 @@ Equation \eqref{eq:seb_isolated} defines the effective surface heat capacity:
 C_s^{\text{eff}} = \frac{C_s}{1 - \Pi_G}.
 \label{eq:C_s_eff}
 \end{equation}
+
 \begin{quote}
 \textbf{Note:} Equation \eqref{eq:C_s_eff} is an exact algebraic identity derived directly from the surface energy balance, rather than a heuristic or empirical approximation.
 \end{quote}
@@ -256,18 +254,17 @@ Equation \eqref{eq:epsilon_scaling} proves that subsurface conductive coupling d
 \subsubsection{Geometric Interpretation and Dynamic Regimes}
 Under Fenichel's Theorem, normal hyperbolicity and the existence of an attracting slow manifold $\mathcal{M}_\varepsilon$ require strong timescale separation ($\varepsilon \ll 1$). The rescaled perturbation parameter $\varepsilon(\Pi_G)$ governs trajectory speed and structural stability along this manifold:
 \begin{itemize}
-	\item \textbf{Strong Timescale Separation ($\Pi_G \to 1^-$):} As $\Pi_G \to 1^-$, $\varepsilon(\Pi_G) \to 0$. This reinforces Fenichel normal hyperbolicity, pinning state trajectories tightly to the attracting branch $\mathcal{M}_\varepsilon^+$. Subsurface conductive supply balances radiative losses, slowing trajectory evolution and delaying or preventing approach to the fold locus $\mathcal{C}_{\text{fold}}$.
-	\item \textbf{Reduced Timescale Separation ($\Pi_G \le 0$):} On unbuffered or insulating surfaces, $\varepsilon(\Pi_G) \ge \varepsilon_0$. The absence of ground buffering accelerates trajectory drift along the slow manifold, driving the system rapidly toward $\mathcal{C}_{\text{fold}}$ where normal hyperbolicity breaks down and turbulence collapse ensues.
+    \item \textbf{Strong Timescale Separation ($\Pi_G \to 1^-$):} As $\Pi_G \to 1^-$, $\varepsilon(\Pi_G) \to 0$. This reinforces Fenichel normal hyperbolicity, pinning state trajectories tightly to the attracting branch $\mathcal{M}_\varepsilon^+$. Subsurface conductive supply balances radiative losses, slowing trajectory evolution and delaying or preventing approach to the fold locus $\mathcal{C}_{\text{fold}}$.
+    \item \textbf{Reduced Timescale Separation ($\Pi_G \le 0$):} On unbuffered or insulating surfaces, $\varepsilon(\Pi_G) \ge \varepsilon_0$. The absence of ground buffering accelerates trajectory drift along the slow manifold, driving the system rapidly toward $\mathcal{C}_{\text{fold}}$ where normal hyperbolicity breaks down and turbulence collapse ensues.
 \end{itemize}
 
 The dynamic effects of ground coupling across physical regimes are summarized in Table~\ref{tab:ground_coupling_regimes}.
 
 \begin{table}[htbp]
 \centering
-\small
 \caption{Dynamical classification of ground-coupling regimes and their GSPT manifold consequences.}
 \label{tab:ground_coupling_regimes}
-\begin{tabular}{l c c p{5.0cm}}
+\begin{tabular}{l c c p{6.5cm}}
 \toprule
 \textbf{Regime} & \textbf{Ground Ratio $\Pi_G$} & \textbf{Effective Capacity $C_s^{\text{eff}}$} & \textbf{GSPT Dynamic Consequence} \\
 \midrule
@@ -336,12 +333,12 @@ The manuscript templates and governing mathematical formulations presented herei
 \begin{itemize}
     \item $C^\infty$-smooth chart coordinate desingularization via $\tilde{e} = \sqrt{e + \delta}$ and fast time rescaling $d\tau = \tilde{e} \, dt$,
     \item Geometric fast-slow decomposition of the critical manifold $\mathcal{M}_0$ and normal hyperbolicity loss along the fold locus $\mathcal{C}_{\text{fold}}$,
-    \item Hyperbolic stratification regularization $\operatorname{smooth\_max}(x; \epsilon_{\text{strat}})$ supporting Fenichel-compatible dynamics and autodiff-compatible Jacobian calculations (ForwardDiff.jl).
+    \item Hyperbolic stratification regularization $\operatorname{smooth\_max}(x; \epsilon_{\text{strat}})$ supporting Fenichel-compatible dynamics and autodiff-compatible Jacobian calculations (\texttt{ForwardDiff.jl}).
 \end{itemize}
 
 The primary theoretical reference notes located in the repository include:
 \begin{itemize}
-    \item \texttt{notes/Governing\ Equations\ and\ Turbulence\ Closure.md}
+    \item \texttt{notes/Governing Equations and Turbulence Closure.md}
     \item \texttt{notes/Closures.md}
     \item \texttt{notes/Types.md}
 \end{itemize}
@@ -363,7 +360,6 @@ figure is generated by \texttt{scripts/run\_cases99.jl} and written to
 
 % --- Bibliography Style Selection ---
 \bibliographystyle{unsrtnat}
-% Points to 'paper1.bib' file (do NOT include .bib extension)
 \bibliography{paper1}
 
 \end{document}

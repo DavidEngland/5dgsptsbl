@@ -7,6 +7,25 @@ function read_text(path::String)
     return read(path, String)
 end
 
+function sanitize_latex_controls(text::String)
+    # Guard against accidental '\t' escape interpretation that can strip
+    # leading backslashes from common LaTeX commands during intermediate processing.
+    fixes = Dict(
+        string('\t', "extit") => "\\textit",
+        string('\t', "extbf") => "\\textbf",
+        string('\t', "heta")  => "\\theta",
+        string('\t', "ilde")  => "\\tilde",
+        string('\t', "au")    => "\\tau",
+        string('\t', "oprule") => "\\toprule",
+    )
+
+    cleaned = text
+    for (broken, fixed) in fixes
+        cleaned = replace(cleaned, broken => fixed)
+    end
+    return cleaned
+end
+
 function render_template(template::String, context::Dict{String,String})
     rendered = template
     for (k, v) in context
@@ -21,11 +40,38 @@ function notes_exist(paths::Vector{String})
 end
 
 function build_sections(section_dir::String, context::Dict{String,String})
-    files = sort(filter(name -> endswith(name, ".tex.mustache"), readdir(section_dir)))
+    # Canonical logical section order for academic publication
+    canonical_order = [
+        "abstract.tex.mustache",
+        "introduction.tex.mustache",
+        "governing_equations.tex.mustache",
+        "closures.tex.mustache",
+        "results_figures.tex.mustache",
+        "notes_traceability.tex.mustache"
+    ]
+
+    all_files = filter(name -> endswith(name, ".tex.mustache"), readdir(section_dir))
+
+    # Sort files according to canonical_order; append any unlisted templates to the end
+    ordered_files = String[]
+    for name in canonical_order
+        if name in all_files
+            push!(ordered_files, name)
+        end
+    end
+
+    # Add any extra templates not explicitly listed in canonical_order
+    for name in sort(all_files)
+        if !(name in ordered_files)
+            push!(ordered_files, name)
+        end
+    end
+
     blocks = String[]
-    for file in files
+    for file in ordered_files
         path = joinpath(section_dir, file)
         rendered = render_template(read_text(path), context)
+        rendered = sanitize_latex_controls(rendered)
         push!(blocks, "% --- Begin Section: $(path) ---\n" * rendered * "\n% --- End Section: $(path) ---")
     end
     return join(blocks, "\n\n")
@@ -35,7 +81,7 @@ function copy_bibliography(outdir::String)
     src_bib = joinpath("notes", "manuscript", "paper1.bib")
     dst_bib = joinpath(outdir, "paper1.bib")
     if isfile(src_bib)
-        cp(src_bib, dst_bib; force = true)
+        cp(src_bib, dst_bib; force=true)
         println("Copied bibliography to ", dst_bib)
     else
         @warn "Bibliography source not found" src_bib
@@ -91,6 +137,7 @@ function main()
 
     paper_template = read_text(joinpath("templates", "paper.tex.mustache"))
     paper_tex = render_template(paper_template, context)
+    paper_tex = sanitize_latex_controls(paper_tex)
     outpath = joinpath(outdir, "paper.tex")
     write(outpath, paper_tex)
 

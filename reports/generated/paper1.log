@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  3 AUG 2026 19:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  3 AUG 2026 19:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**paper
-(./paper.tex
+**paper1
+(./paper1.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (/usr/local/texlive/2026/texmf-dist/tex/latex/base/article.cls
@@ -396,8 +396,8 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count320
 )
-(./paper.aux)
-\openout1 = `paper.aux'.
+(./paper1.aux)
+\openout1 = `paper1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
 LaTeX Font Info:    ... okay on input line 21.
@@ -475,9 +475,9 @@ e
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring OFF on input line 21.
-(./paper.out) (./paper.out)
+(./paper1.out) (./paper1.out)
 \@outlinefile=\write3
-\openout3 = `paper.out'.
+\openout3 = `paper1.out'.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
 3.
@@ -536,89 +536,74 @@ al/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/202
 6/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2026/texmf-dist/f
 onts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/d
 vips/lm/lm-mathsy.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm
--mathex.enc}] [2] [3] [4] [5]
+-mathex.enc}] [2] [3] [4]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-59.
+57.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 272--273
-[]\T1/lmr/bx/n/10 GSPT Dy-namic Con-se-
+[5]
+Underfull \hbox (badness 1675) in paragraph at lines 275--276
+[]\T1/lmr/m/n/10.95 Asymptotic limit $\OML/lmm/m/it/10.95 " \OMS/lmsy/m/n/10.95
+ ! \OT1/lmr/m/n/10.95 0$\T1/lmr/m/n/10.95 ; ground
  []
 
 
-Underfull \hbox (badness 6477) in paragraph at lines 274--275
-[]\T1/lmr/m/n/10 Accelerated drift along $\OMS/lmsy/m/n/10 M[]$\T1/lmr/m/n/10 ;
-
- []
-
-
-Underfull \hbox (badness 3514) in paragraph at lines 276--277
-[]\T1/lmr/m/n/10 Lengthened ther-mal timescale
- []
-
-
-Underfull \hbox (badness 1253) in paragraph at lines 278--279
-\T1/lmr/m/n/10 heat bal-ances ra-dia-tive deficit
- []
-
-
-Overfull \hbox (7.16522pt too wide) in paragraph at lines 270--281
+Overfull \hbox (76.61452pt too wide) in paragraph at lines 267--278
  [][] 
  []
 
-[6{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-91.
-
+88.
 (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-<figures/cases99_manifold.png, id=182, 1806.75pt x 1355.0625pt>
+) [6{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+<figures/cases99_manifold.png, id=179, 1806.75pt x 1355.0625pt>
 File: figures/cases99_manifold.png Graphic file (type png)
 <use figures/cases99_manifold.png>
-Package pdftex.def Info: figures/cases99_manifold.png  used on input line 301.
+Package pdftex.def Info: figures/cases99_manifold.png  used on input line 298.
 (pdftex.def)             Requested size: 446.26582pt x 334.69151pt.
-<figures/manifold.png, id=187, 677.53125pt x 526.96875pt>
+ [7 <./figures/cases99_manifold.png>]
+<figures/manifold.png, id=194, 677.53125pt x 526.96875pt>
 File: figures/manifold.png Graphic file (type png)
 <use figures/manifold.png>
-Package pdftex.def Info: figures/manifold.png  used on input line 318.
+Package pdftex.def Info: figures/manifold.png  used on input line 315.
 (pdftex.def)             Requested size: 375.80544pt x 292.30225pt.
- [7] [8 <./figures/cases99_manifold.png>] [9 <./figures/manifold.png>]
-Overfull \hbox (1.06113pt too wide) in paragraph at lines 339--340
+ [8 <./figures/manifold.png>]
+Overfull \hbox (1.06113pt too wide) in paragraph at lines 336--337
 []\T1/lmr/m/n/10.95 Hyperbolic strat-i-fi-ca-tion reg-u-lar-iza-tion $[]\OT1/lm
 r/m/n/10.95 (\OML/lmm/m/it/10.95 x\OT1/lmr/m/n/10.95 ; \OML/lmm/m/it/10.95 ^^O[
 ]\OT1/lmr/m/n/10.95 )$ \T1/lmr/m/n/10.95 sup-port-ing Fenichel-compatible
  []
 
 
-Overfull \hbox (55.37338pt too wide) in paragraph at lines 351--355
+Overfull \hbox (55.37338pt too wide) in paragraph at lines 348--352
 \T1/lmtt/m/n/10.95 scripts/assemble_manuscript.jl\T1/lmr/m/n/10.95 . The pri-ma
 ry bench-mark fig-ure is gen-er-ated by \T1/lmtt/m/n/10.95 scripts/run_cases99.
 jl
  []
 
-[10] (./paper.bbl [11
+[9] (./paper1.bbl [10
 
-] [12]) [13] (./paper.aux)
+] [11]) [12] (./paper1.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-Package rerunfilecheck Info: File `paper.out' has not changed.
+Package rerunfilecheck Info: File `paper1.out' has not changed.
 (rerunfilecheck)             Checksum: DDD72E426DD0DF0BB8A6BFD5243AEC89;4482.
  ) 
 Here is how much of TeX's memory you used:
  12057 strings out of 467525
- 184976 string characters out of 5418982
- 612840 words of memory out of 5000000
- 40665 multiletter control sequences out of 15000+600000
- 724601 words of font info for 102 fonts, out of 8000000 for 9000
+ 185028 string characters out of 5418982
+ 615001 words of memory out of 5000000
+ 40667 multiletter control sequences out of 15000+600000
+ 724608 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,15n,79p,1045b,684s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,15n,79p,1050b,684s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/lo
 cal/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texliv
-e/2026/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></usr/local/texlive/2026/texm
+e/2026/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2026/texm
 f-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2026/texmf-dist/fon
 ts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/p
 ublic/lm/lmmi5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lm
@@ -638,10 +623,10 @@ lmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.
 pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
 m10.pfb>
-Output written on paper.pdf (13 pages, 1610827 bytes).
+Output written on paper1.pdf (12 pages, 1607167 bytes).
 PDF statistics:
- 408 PDF objects out of 1000 (max. 8388607)
- 331 compressed objects within 4 object streams
- 109 named destinations out of 1000 (max. 500000)
+ 398 PDF objects out of 1000 (max. 8388607)
+ 322 compressed objects within 4 object streams
+ 107 named destinations out of 1000 (max. 500000)
  147 words of extra memory for PDF output out of 10000 (max. 10000000)
 
