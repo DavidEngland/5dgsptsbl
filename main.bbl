@@ -1,0 +1,182 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global/global}
+    \entry{Kuehn2026Emergent}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=ff0ad26f8008ce1c3798d74f83f5de55}{%
+           family={Kuehn},
+           familyi={K\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f33268f91e3503149e054070db6bd1c8}{%
+           family={Murphy},
+           familyi={M\bibinitperiod},
+           given={Fergal},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0cd9c1dfbc41c44f0c25c209579bc2e1}
+      \strng{fullhash}{0cd9c1dfbc41c44f0c25c209579bc2e1}
+      \strng{fullhashraw}{0cd9c1dfbc41c44f0c25c209579bc2e1}
+      \strng{bibnamehash}{0cd9c1dfbc41c44f0c25c209579bc2e1}
+      \strng{authorbibnamehash}{0cd9c1dfbc41c44f0c25c209579bc2e1}
+      \strng{authornamehash}{0cd9c1dfbc41c44f0c25c209579bc2e1}
+      \strng{authorfullhash}{0cd9c1dfbc41c44f0c25c209579bc2e1}
+      \strng{authorfullhashraw}{0cd9c1dfbc41c44f0c25c209579bc2e1}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{math.DS}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{arXiv preprint arXiv:2603.19382}
+      \field{title}{Emergent Higher-Order Structure from Fast Adaptive Networks}
+      \field{year}{2026}
+      \verb{eprint}
+      \verb 2603.19382
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2603.19382
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2603.19382
+      \endverb
+    \endentry
+    \entry{Petrova2024Propagating}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=9b476928d76d672936b327373c9a8f81}{%
+           family={Petrova},
+           familyi={P\bibinitperiod},
+           given={Yulia},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6fcbcb597bff1f28dd82655c75dd6bce}{%
+           family={Tikhomirov},
+           familyi={T\bibinitperiod},
+           given={Sergey},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b475fb3b4f388af8314c9be031e0d2d9}{%
+           family={Efendiev},
+           familyi={E\bibinitperiod},
+           given={Yalchin},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{86700d710d17731335ddc287b7cb39e0}
+      \strng{fullhash}{86700d710d17731335ddc287b7cb39e0}
+      \strng{fullhashraw}{86700d710d17731335ddc287b7cb39e0}
+      \strng{bibnamehash}{86700d710d17731335ddc287b7cb39e0}
+      \strng{authorbibnamehash}{86700d710d17731335ddc287b7cb39e0}
+      \strng{authornamehash}{86700d710d17731335ddc287b7cb39e0}
+      \strng{authorfullhash}{86700d710d17731335ddc287b7cb39e0}
+      \strng{authorfullhashraw}{86700d710d17731335ddc287b7cb39e0}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{math.AP}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{SIAM Journal on Mathematical Analysis}
+      \field{title}{Propagating terrace in a two-tubes model of gravitational fingering}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.1137/24m1632668
+      \endverb
+      \verb{eprint}
+      \verb 2401.05981
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2401.05981
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2401.05981
+      \endverb
+    \endentry
+    \entry{Rink2025Coordinate}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=e2510d2d777ee306466ba4a5161aa5cc}{%
+           family={Rink},
+           familyi={R\bibinitperiod},
+           given={Bob},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0b178d72a41a374b1b55273e18fdbd91}{%
+           family={Vo},
+           familyi={V\bibinitperiod},
+           given={Theodore},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=550196c33c34d9818bc77ede0938ed38}{%
+           family={Wechselberger},
+           familyi={W\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {American Mathematical Society (AMS)}%
+      }
+      \strng{namehash}{5966f314b5974dbc218ab8b4b7764a50}
+      \strng{fullhash}{5966f314b5974dbc218ab8b4b7764a50}
+      \strng{fullhashraw}{5966f314b5974dbc218ab8b4b7764a50}
+      \strng{bibnamehash}{5966f314b5974dbc218ab8b4b7764a50}
+      \strng{authorbibnamehash}{5966f314b5974dbc218ab8b4b7764a50}
+      \strng{authornamehash}{5966f314b5974dbc218ab8b4b7764a50}
+      \strng{authorfullhash}{5966f314b5974dbc218ab8b4b7764a50}
+      \strng{authorfullhashraw}{5966f314b5974dbc218ab8b4b7764a50}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{math.DS}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{Quarterly of Applied Mathematics}
+      \field{number}{2}
+      \field{title}{A coordinate-independent Pontryagin-Rodygin theorem for slow-fast averaging}
+      \field{volume}{84}
+      \field{year}{2025}
+      \field{pages}{285\bibrangedash 324}
+      \range{pages}{40}
+      \verb{doi}
+      \verb 10.1090/qam/1735
+      \endverb
+      \verb{eprint}
+      \verb 2509.06589
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2509.06589
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2509.06589
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

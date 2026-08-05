@@ -1,0 +1,75 @@
+{
+  "servers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/davidengland/Documents/GitHub"
+      ]
+    },
+    "git": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-git",
+        "--repository",
+        "/Users/davidengland/Documents/GitHub"
+      ]
+    },
+    "github": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${input:github_pat}"
+      }
+    },
+    "sqlite": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-sqlite",
+        "--db-path",
+        "/Users/davidengland/Documents/GitHub/campaigns.db"
+      ]
+    },
+    "jupyter": {
+      "command": "uvx",
+      "args": [
+        "jupyter-mcp-server@latest"
+      ],
+      "env": {
+        "JUPYTER_URL": "http://localhost:8888",
+        "JUPYTER_TOKEN": "${input:jupyter_token}",
+        "ALLOW_IMG_OUTPUT": "true"
+      }
+    },
+    "arxiv": {
+      "command": "uvx",
+      "args": [
+        "arxiv-mcp-server"
+      ]
+    },
+    "arxiv-latex": {
+      "command": "uvx",
+      "args": [
+        "arxiv-latex-mcp"
+      ]
+    }
+  },
+  "inputs": [
+    {
+      "id": "github_pat",
+      "type": "promptString",
+      "description": "GitHub Personal Access Token (repo scope)",
+      "password": true
+    },
+    {
+      "id": "jupyter_token",
+      "type": "promptString",
+      "description": "JupyterLab Access Token",
+      "password": true
+    }
+  ]
+}
